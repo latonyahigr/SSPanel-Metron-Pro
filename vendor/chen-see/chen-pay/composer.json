@@ -1,0 +1,25 @@
+{
+  "name": "chen-see/chen-pay",
+  "description": "免签约支付宝与微信双支付，根据COOKIE",
+  "keywords": [
+    "alipay",
+    "wxpay",
+    "chenpay"
+  ],
+  "license": "MIT",
+  "homepage": "http://9in.info",
+  "require": {
+    "php": ">=5.5",
+    "guzzlehttp/guzzle": "^6.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "ChenPay\\": "src/ChenPay"
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0"
+    }
+  }
+}
