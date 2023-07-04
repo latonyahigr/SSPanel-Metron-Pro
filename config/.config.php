@@ -18,7 +18,7 @@ $_ENV['key'] = '3823d93d8c4e598185c69f5a2b0520ce';                //!!! 瞎 jb �
 $_ENV['debug'] = false;                          //正式环境请确保为 false
 $_ENV['appName'] = '海豚云';                      //站点名称
 $_ENV['baseUrl'] = 'https://haituncloud.xyz';               //站点地址
-$_ENV['muKey'] = '03c291f6-2f6d-b4f3-303b-196bdf4246b7';               //用于校验魔改后端请求，可以随意修改，但请保持前后端一致，否则节点不能工作！
+$_ENV['muKey'] = '03c291f6-2f6d-b4f3-303b-196bdf4246b7';    //用于校验魔改后端请求，可以随意修改，但请保持前后端一致，否则节点不能工作！
 
 //添加主题首页
 $_ENV['metron_index']    = 'index';  //index:metron原生  index_malio:马里奥   index_zhujike:主机壳  index_cool:cool主题  index_jdy:悟空主题
@@ -302,6 +302,11 @@ $_ENV['payment_system'] = 'metronpay';    # 不要动!!!
 $_ENV['vmq_secret']  = '';  // 通讯密钥
 $_ENV['vmq_url']  = '';     // 服务器地址
 $_ENV['vmq_param']  = 'bob666';  // (选填)传输参数
+
+#xgPay
+$_ENV['xgpay_customerid'] = 11542;
+$_ENV['xgpay_auth'] = '095fff9be52111e0cdd09aed8c647eb60ccf1485';
+$_ENV['xgpay_url'] = 'http://pay.mssdk.com/apisubmit';
 
 #alipay,f2fpay
 $_ENV['f2fpay_app_id'] = '';

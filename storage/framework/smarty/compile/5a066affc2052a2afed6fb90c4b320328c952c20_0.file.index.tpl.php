@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2023-06-27 22:49:18
+/* Smarty version 3.1.48, created on 2023-07-03 22:18:45
   from 'D:\XProject\SSPanel\resources\views\metron\user\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_649af6ee9b0579_33390505',
+  'unifunc' => 'content_64a2d8c5873582_77172336',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5a066affc2052a2afed6fb90c4b320328c952c20' => 
     array (
       0 => 'D:\\XProject\\SSPanel\\resources\\views\\metron\\user\\index.tpl',
-      1 => 1687877355,
+      1 => 1688393829,
       2 => 'file',
     ),
   ),
@@ -28,7 +28,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:include/index/pop.tpl' => 1,
   ),
 ),false)) {
-function content_649af6ee9b0579_33390505 (Smarty_Internal_Template $_smarty_tpl) {
+function content_64a2d8c5873582_77172336 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,6 +55,8 @@ function content_649af6ee9b0579_33390505 (Smarty_Internal_Template $_smarty_tpl)
                             <div class="d-flex align-items-center">
                                 <?php if ($_smarty_tpl->tpl_vars['user']->value->isAbleToCheckin()) {?>
                                     <a href="javascript:;"
+                                       data-class="<?php echo $_smarty_tpl->tpl_vars['user']->value->class;?>
+"
                                        class="btn <?php echo $_smarty_tpl->tpl_vars['style']->value[$_smarty_tpl->tpl_vars['theme_style']->value]['global']['btn_subheader'];?>
  font-weight-bold py-3 px-6"
                                        id="checkin" onclick="index.checkin();">每日签到</a>
@@ -161,15 +163,15 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                                     <div class="d-flex flex-column ml-3 mr-5">
                                                         <div class="font-size-h4 <?php echo $_smarty_tpl->tpl_vars['style']->value[$_smarty_tpl->tpl_vars['theme_style']->value]['index']['text'];?>
  mb-2">
-                                                            <strong><?php echo $_smarty_tpl->tpl_vars['user']->value->unusedTraffic();?>
-</strong></div>
+                                                            <strong><?php echo $_smarty_tpl->tpl_vars['user']->value->unusedTrafficGB();?>
+GB</strong></div>
                                                         <p class="text-dark-50">剩余流量</p>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="card-body pt-2 pl-5 pr-3 pb-1">
-                                                <p class="text-dark-50">下次重置：<?php echo $_smarty_tpl->tpl_vars['user']->value->valid_use_loop();?>
-
+                                                <p class="text-dark-50">已用流量：<?php echo $_smarty_tpl->tpl_vars['user']->value->usedTrafficGB();?>
+GB
                                                     <?php if ($_smarty_tpl->tpl_vars['metron']->value['advanceResetFlow'] === true) {?>
                                                         <span id="advance_reset_flow_onclick"
                                                               class="label <?php echo $_smarty_tpl->tpl_vars['style']->value[$_smarty_tpl->tpl_vars['theme_style']->value]['index']['dash2']['btn'];?>
@@ -559,13 +561,16 @@ echo substr($_smarty_tpl->tpl_vars['user']->value->lastSsTime(),5);
                     showInLegend: true,
                     dataPoints: [
                         { y: <?php echo $_smarty_tpl->tpl_vars['user']->value->usedTrafficGB();?>
-, legendText: "已用:<?php echo $_smarty_tpl->tpl_vars['user']->value->usedTrafficGB();?>
+, name:"已用(GB)", legendText: "已用:<?php echo $_smarty_tpl->tpl_vars['user']->value->usedTrafficGB();?>
+GB",labelIndex:"<?php echo $_smarty_tpl->tpl_vars['user']->value->usedTrafficGB();?>
 GB"},
                         { y: <?php echo $_smarty_tpl->tpl_vars['user']->value->TodayusedTrafficGB();?>
-, legendText: "今日已用:<?php echo $_smarty_tpl->tpl_vars['user']->value->TodayusedTrafficGB();?>
+, name:"今日已用(GB)", legendText: "今日已用:<?php echo $_smarty_tpl->tpl_vars['user']->value->TodayusedTrafficGB();?>
+GB", labelIndex:"<?php echo $_smarty_tpl->tpl_vars['user']->value->TodayusedTrafficGB();?>
 GB"},
                         { y: <?php echo $_smarty_tpl->tpl_vars['user']->value->unusedTrafficGB();?>
-, legendText: "剩余:<?php echo $_smarty_tpl->tpl_vars['user']->value->unusedTrafficGB();?>
+, name:"剩余(GB)", legendText: "剩余:<?php echo $_smarty_tpl->tpl_vars['user']->value->unusedTrafficGB();?>
+GB", labelIndex: "<?php echo $_smarty_tpl->tpl_vars['user']->value->unusedTrafficGB();?>
 GB"},
                     ]
                 }]

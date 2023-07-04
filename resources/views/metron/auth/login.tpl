@@ -6,7 +6,8 @@
 
                         <div class="login-signin">
                             <div class="mb-10">
-                                <h3>登录用户中心</h3>
+                                <h4 class="text-dark font-weight-normal mb-4" style="font-size: 22px;">欢迎使用 <span class="font-weight-bold">{$config["appName"]}</span></h4>
+                                <p class="text-muted">欢迎登录用户中心</p>
                             </div>
                             <form class="form" id="login_form">
                                 <div id="login_form_1">
@@ -74,6 +75,10 @@
                                 </div>
                             </div>
                         </div>
+                         <div class="text-center mt-5 text-small" style="margin-top: 3rem!important;">
+                            Copyright © 2023 {$config["appName"]}
+                            <div class="mt-2" id="copyright">Powered by <a href="/staff">SSPANEL</a></div>
+                         </div>
 
                         {include file='include/auth/scripts.tpl'}
     </body>

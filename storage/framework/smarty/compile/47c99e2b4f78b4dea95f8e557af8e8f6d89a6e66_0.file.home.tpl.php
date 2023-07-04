@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2023-06-27 22:56:22
+/* Smarty version 3.1.48, created on 2023-06-28 17:10:50
   from 'D:\XProject\SSPanel\resources\views\metron\user\help\home.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_649af896ec8f36_54064946',
+  'unifunc' => 'content_649bf91ac83966_67179964',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '47c99e2b4f78b4dea95f8e557af8e8f6d89a6e66' => 
     array (
       0 => 'D:\\XProject\\SSPanel\\resources\\views\\metron\\user\\help\\home.tpl',
-      1 => 1687877593,
+      1 => 1687943446,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:include/global/scripts.tpl' => 1,
   ),
 ),false)) {
-function content_649af896ec8f36_54064946 (Smarty_Internal_Template $_smarty_tpl) {
+function content_649bf91ac83966_67179964 (Smarty_Internal_Template $_smarty_tpl) {
 ?>                                <?php $_smarty_tpl->_subTemplateRender('file:user/help/head.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -43,7 +43,7 @@ $_smarty_tpl->tpl_vars['list_L1']->do_else = false;
                                                 <?php }?>
 
                                                 <?php if ($_smarty_tpl->tpl_vars['list_L1']->value->name == 'Android') {?>
-                                                    <?php $_smarty_tpl->_assignInScope('url', '/user/tutorial?os=Android&client=Clash');?>
+                                                    <?php $_smarty_tpl->_assignInScope('url', '/user/tutorial?os=Android&client=Home');?>
                                                 <?php }?>
 
                                                 <?php if ($_smarty_tpl->tpl_vars['list_L1']->value->name == 'iOS') {?>
@@ -51,7 +51,7 @@ $_smarty_tpl->tpl_vars['list_L1']->do_else = false;
                                                 <?php }?>
 
                                                 <?php if ($_smarty_tpl->tpl_vars['list_L1']->value->name == 'Mac') {?>
-                                                    <?php $_smarty_tpl->_assignInScope('url', '/user/tutorial?os=MacOS&client=Clash');?>
+                                                    <?php $_smarty_tpl->_assignInScope('url', '/user/tutorial?os=MacOS&client=Home');?>
                                                 <?php }?>
 
                                                 <?php if ($_smarty_tpl->tpl_vars['list_L1']->value->name == 'Linux') {?>

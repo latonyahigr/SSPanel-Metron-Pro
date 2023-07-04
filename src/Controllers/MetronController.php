@@ -626,14 +626,33 @@ class MetronController extends BaseController
                 }
                 $shop_conversion = MetronSetting::get('shop_conversion');
                 $metron = new Metron();
+                $tc = [
+                    1 => "入门版",
+                    2 => "入门版",
+                    3 => "入门版",
+                    4 => "入门版",
+                    5 => "基础版",
+                    6 => "基础版",
+                    7 => "基础版",
+                    8 => "基础版",
+                    9 => "标准版",
+                    10 => "标准版",
+                    11 => "标准版",
+                    12 => "标准版",
+                    13 => "旗舰版",
+                    14 => "旗舰版",
+                    15 => "旗舰版",
+                    16 => "旗舰版",
+                ];
                 foreach ($shops as $shop) {
                     if ($shop_conversion === true) {
                         $shop_info = $metron->getConversionInfo($user, $shop);
                         $shop_pkcs = $shop_info['ret'];
                     }
+
                     $dataarr['id'] = $shop->id;
                     $dataarr['shopid'] = $shop->shopid;
-                    $dataarr['shopname'] = $shop->shop()->name;
+                    $dataarr['shopname'] = '【' .$tc[$shop->shopid].'】  '. $shop->shop()->name ;
                     $dataarr['datetime'] = date('Y-m-d H:i:s', $shop->datetime);
                     $dataarr['renew'] = $shop->renew != 0 ? $shop->renew_date() : '不自动续费';
                     $dataarr['auto_reset'] = $shop->shop()->auto_reset_bandwidth != 0 ? '自动重置' : '不自动重置';

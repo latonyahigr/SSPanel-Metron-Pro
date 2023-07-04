@@ -56,7 +56,7 @@
                                         <div class="input-group mt-5">
                                             <input class="form-control h-auto  px-8 pr-0" type="text" placeholder="邮箱验证码" name="email_code" id="email_code" autocomplete="new-password" />
                                             <div class="input-group-append ml-0">
-                                                <button type="button" class="btn btn-primary btn-lg btn-icon icon-right" id="send_email" onclick="sendMail()">获取验证码</button>
+                                                <button type="button" class="btn btn-primary btn-lg icon-right" id="send_email" onclick="sendMail()">获取验证码</button>
                                             </div>
                                         </div>
                                     </div>

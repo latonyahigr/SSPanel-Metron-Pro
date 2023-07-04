@@ -8,7 +8,45 @@ use Omnipay\Omnipay;
 
 class MetronPay extends AbstractPayment
 {
-    public function purchase($request, $response, $args, $telegram = 0)
+
+
+    public function purchase($request, $response, $args, $telegram = 0){
+        $price = $request->getParam('price') ?? 0;
+        $paylist_id = (int)$request->getParam('paylist_id');
+
+        $shopinfo = array();
+        $shopinfo['id'] = (int)$request->getParam('shopid');
+        $shopinfo['autorenew'] = 0;
+        if ($request->getParam('shopauto')) {
+            $shopinfo['autorenew'] = $request->getParam('shopauto');
+        }
+        $shopinfo['coupon'] = '';
+        if ($request->getParam('shopcoupon')) {
+            $shopinfo['coupon'] = $request->getParam('shopcoupon');
+        }
+        $shopinfo['disableothers'] = 1;
+
+        $xgPay = new XgPay();
+        $result = $xgPay->purchase($price, $shopinfo, $paylist_id);
+
+        if ($result['errcode'] == 0) {
+            $return = array(
+                'ret' => 1,
+                'type' => 'url',
+                'paytype' => $result['paytype'],
+                'tradeno' => $result['pid'],
+                'url' => $result['url']
+            );
+        } else {
+            $return = array(
+                'ret' => 0,
+                'msg' => $result['errmsg']
+            );
+        }
+        return json_encode($return);
+
+    }
+    public function purchase1($request, $response, $args, $telegram = 0)
     {
         if ($telegram === 0) {
             $price = $request->getParam('price') ?? 0;
@@ -556,6 +594,10 @@ class MetronPay extends AbstractPayment
 
     public function notify($request, $response, $args)
     {
+        $mgate = new XgPay();
+        $mgate->notify($request, $response, $args);
+        return;
+
         $path = $request->getUri()->getPath();
         file_put_contents(BASE_PATH . '/storage/pay.log', json_encode(file_get_contents("php://input")) . "\r\n", FILE_APPEND);
         $path_exploded = explode('/', $path);
@@ -688,9 +730,12 @@ class MetronPay extends AbstractPayment
         return 1;
     }
 
+//    public function getReturnHTML($request, $response, $args){
+//
+//    }
     public function getReturnHTML($request, $response, $args)
     {
-        $tradeno = $_GET['tradeno'];
+        $tradeno = $request->getParam('sdorderno');
         if ($tradeno == '' || $tradeno == null) {
             $tradeno = $_GET['source'];
         }
@@ -698,7 +743,7 @@ class MetronPay extends AbstractPayment
             $tradeno = $_GET['out_trade_no'];
         }
         $result = array();
-        $p = Paylist::where('tradeno', '=', $tradeno)->first();        # 获取对应的充值记录
+        $p = Paylist::where('tradeno', '=', $tradeno)->first();  # 获取对应的充值记录
         if ($p->status === 1) {      # 充值已完成
             $result['status'] = 1;
             # 记录中商品字段存在

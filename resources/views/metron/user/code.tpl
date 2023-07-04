@@ -24,7 +24,14 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="col-lg-5">
-                                        <div id="code-getmoney" class="card card-custom bgi-no-repeat gutter-b card-stretch {$metron['style_shadow']}" style="min-height: 400px; background-position: calc(100% + 0.5rem) calc(100% + 0.5rem); background-size: 150% auto; background-image: url({$metron['assets_url']}/media/svg/patterns/taieri.svg)">
+                                        <div id="code-getmoney" class="card card-custom bgi-no-repeat gutter-b card-stretch {$metron['style_shadow']}" style="min-height: 400px; background-position: calc(100% + 0.5rem) calc(100% + 0.5rem); background-size: 150% auto;">
+                                            <div class="card-icon" style="color: #8c98f3;
+    margin: -60px;
+    position: absolute;
+    right: 60px;
+    top: 60px;">
+                                                <i class="fas fa-yen-sign " style="font-size: 140px;"></i>
+                                            </div>
                                             <div class="card-body">
                                                 <div class="p-4">
                                                     <h3 class="{$style[$theme_style]['global']['title']} font-weight-bolder my-7">钱包余额</h3>
@@ -78,9 +85,27 @@
                                                     </li>
                                                 </ul>
                                                 <div class="separator separator-dashed separator-border-4 p-5"></div>
+                                                <ul class="dashboard-tabs nav nav-pills row nav-primary row-paddingless m-0 p-0" role="tablist1">
+                                                    <li class="nav-item d-flex col flex-grow-1 flex-shrink-0 mt-5 mb-lg-0 cursor_onclick" style="margin-right: 0">
+                                                        <a class="nav-link border d-flex flex-grow-1 rounded flex-row align-items-center active" data-toggle="pill" href="#alipay">
+                                                            <span class="nav-icon  w-auto">
+                                                                <i class="fab fa-alipay mr-1"></i>
+                                                            </span>
+                                                            <span class="nav-text font-size-lg font-weight-bold text-center">支付宝</span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="nav-item d-flex col flex-grow-1 flex-shrink-0 mt-5 mb-lg-0 cursor_onclick">
+                                                        <a class="nav-link border d-flex flex-grow-1 rounded  flex-row align-items-center disabled" data-toggle="pill" href="#wxpay">
+                                                            <span class="nav-icon w-auto">
+                                                                <i class="fa fa-wechat mr-1"></i>
+                                                            </span>
+                                                            <span class="nav-text font-size-lg  font-weight-bold text-center">微信</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
                                                 <div class="tab-content m-0 p-0">
                                                     <div class="tab-pane active" id="tab_Recharge_online" role="tabpanel">
-                                                        <div class="card-body pb-0">
+                                                        <div class="card-body pb-0 pl-0 pr-0">
                                                             <div class="form-group" id="pay_amount_form">
                                                                 <div class="input-group input-group-solid">
                                                                     <input type="number" class="form-control" placeholder="输入充值金额" id="amount" name="amount"/>
@@ -88,7 +113,7 @@
                                                             </div>
                                                             <div class="text-right">
                                                                 {if $config['payment_system'] == 'metronpay'}
-                                                                <button type="button" class="btn btn-primary btn-shadow btn-lg" onclick="code.metronPay('modal');">确认支付</button>
+                                                                <button type="button" class="btn btn-primary btn-shadow btn-lg" onclick="code.metronPay('metronpay', '', '0', '');">确认支付</button>
                                                                 {/if}
                                                             </div>
                                                         </div>

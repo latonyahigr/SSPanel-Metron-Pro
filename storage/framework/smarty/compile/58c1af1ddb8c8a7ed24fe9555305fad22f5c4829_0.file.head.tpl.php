@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2023-06-27 23:06:45
+/* Smarty version 3.1.48, created on 2023-07-03 22:13:47
   from 'D:\XProject\SSPanel\resources\views\metron\include\auth\head.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_649afb05a4acf0_39165984',
+  'unifunc' => 'content_64a2d79b0f0084_50808729',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '58c1af1ddb8c8a7ed24fe9555305fad22f5c4829' => 
     array (
       0 => 'D:\\XProject\\SSPanel\\resources\\views\\metron\\include\\auth\\head.tpl',
-      1 => 1687878393,
+      1 => 1688120562,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_649afb05a4acf0_39165984 (Smarty_Internal_Template $_smarty_tpl) {
+function content_64a2d79b0f0084_50808729 (Smarty_Internal_Template $_smarty_tpl) {
 ?><meta charset="UTF-8"/>
 <meta name="renderer" content="webkit"/>
 <meta name="description" content="Updates and statistics"/>
@@ -155,6 +155,9 @@ function content_649afb05a4acf0_39165984 (Smarty_Internal_Template $_smarty_tpl)
 
     input:-webkit-autofill {
         -webkit-text-fill-color: #000 !important
+    }
+    .font-weight-bold{
+        font-weight: 700!important;
     }
 </style>
 

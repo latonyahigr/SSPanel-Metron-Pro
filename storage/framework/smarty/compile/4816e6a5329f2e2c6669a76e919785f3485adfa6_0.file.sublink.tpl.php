@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2023-06-24 23:59:15
+/* Smarty version 3.1.48, created on 2023-07-02 19:45:50
   from 'D:\XProject\SSPanel\resources\views\metron\user\settings\sublink.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_649712d37ff794_10474806',
+  'unifunc' => 'content_64a1636ec5b6e8_77527117',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4816e6a5329f2e2c6669a76e919785f3485adfa6' => 
     array (
       0 => 'D:\\XProject\\SSPanel\\resources\\views\\metron\\user\\settings\\sublink.tpl',
-      1 => 1686149747,
+      1 => 1688298343,
       2 => 'file',
     ),
   ),
@@ -25,7 +25,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:include/global/scripts.tpl' => 1,
   ),
 ),false)) {
-function content_649712d37ff794_10474806 (Smarty_Internal_Template $_smarty_tpl) {
+function content_64a1636ec5b6e8_77527117 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
     <head>
@@ -73,14 +73,15 @@ function content_649712d37ff794_10474806 (Smarty_Internal_Template $_smarty_tpl)
                                                         <label class="col-3 col-xl-3 col-lg-3 col-form-label text-right">新密码</label>
                                                         <div class="col-9 col-md-6 col-lg-9 col-xl-6">
                                                             <div class="input-group input-group-lg input-group-solid">
-                                                                <input class="form-control" type="text" value="" name="node_passwd" oldvalue="" />
+                                                                 <input class="form-control" type="text" value="" name="node_passwd" oldvalue="" id="pwd"/>
                                                             </div>
+                                                            <button type="button"  class="btn btn-primary font-weight-bold btn-sm  mt-4 mb-2" onclick="setting.createPwd();">随机生成密码</button>
                                                         </div>
                                                     </div>
                                                     <div class="row">
                                                         <label class="col-3 col-xl-3"></label>
                                                         <div class="col-9 col-md-6 col-lg-9 col-xl-6">
-                                                            <h5 class="font-weight-bold mt-10 mb-6">订阅链接重置</h5>
+                                                            <h5 class="font-weight-bold mt-4 mb-2">订阅链接重置</h5>
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">

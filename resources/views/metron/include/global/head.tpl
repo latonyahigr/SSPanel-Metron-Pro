@@ -110,19 +110,48 @@
                 <span></span>
             </button>
         </h1>
-        <!--结束::手机端Logo-->
-        <div class="d-flex align-items-center">
+    <div class="d-flex align-items-center">
+        <div class="dropdown" style="align-items: center">
+            <ul class="navbar-nav navbar-right">
 
-            <button class="btn btn-icon btn-hover-transparent-white p-0 ml-3" id="kt_header_mobile_topbar_toggle">
-                    <span class="svg-icon svg-icon-xl">
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                <polygon points="0 0 24 0 24 24 0 24" />
-                                <path d="M12,11 C9.790861,11 8,9.209139 8,7 C8,4.790861 9.790861,3 12,3 C14.209139,3 16,4.790861 16,7 C16,9.209139 14.209139,11 12,11 Z" fill="#000000" fill-rule="nonzero" opacity="0.3" />
-                                <path d="M3.00065168,20.1992055 C3.38825852,15.4265159 7.26191235,13 11.9833413,13 C16.7712164,13 20.7048837,15.2931929 20.9979143,20.2 C21.0095879,20.3954741 20.9979143,21 20.2466999,21 C16.541124,21 11.0347247,21 3.72750223,21 C3.47671215,21 2.97953825,20.45918 3.00065168,20.1992055 Z" fill="#000000" fill-rule="nonzero" />
-                            </g>
-                        </svg>
-                    </span>
-            </button>
+                <li class="dropdown" style="align-items: center">
+                    <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user text-white" aria-expanded="false">
+                        <img alt="image" src="{$user->gravatar}" class="rounded-circle mr-1" width="30">
+
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a href="/user/setting/safe" class="dropdown-item has-icon">
+                            <i class="fas fa-user mr-4" style="color: #000000"></i> 我的账号
+                        </a>
+                        <a href="/user/code" class="dropdown-item has-icon">
+                            <i class="fas fa-wallet mr-4" style="color: #000000"></i> 我的钱包
+                        </a>
+                        <a href="/user/setting/invite" class="dropdown-item has-icon">
+                            <i class="fas fa-laugh-squint mr-4" style="color: #000000"></i> 邀请注册
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="/user/logout" class="dropdown-item has-icon text-danger">
+                            <i class="fas fa-sign-out-alt mr-4" style="color: #000000"></i> 退出登录
+                        </a>
+                    </div>
+                </li>
+            </ul>
         </div>
+    </div>
+
+        <!--结束::手机端Logo-->
+{*        <div class="d-flex align-items-center">*}
+
+{*            <button class="btn btn-icon btn-hover-transparent-white p-0 ml-3" id="kt_header_mobile_topbar_toggle">*}
+{*                    <span class="svg-icon svg-icon-xl">*}
+{*                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">*}
+{*                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">*}
+{*                                <polygon points="0 0 24 0 24 24 0 24" />*}
+{*                                <path d="M12,11 C9.790861,11 8,9.209139 8,7 C8,4.790861 9.790861,3 12,3 C14.209139,3 16,4.790861 16,7 C16,9.209139 14.209139,11 12,11 Z" fill="#000000" fill-rule="nonzero" opacity="0.3" />*}
+{*                                <path d="M3.00065168,20.1992055 C3.38825852,15.4265159 7.26191235,13 11.9833413,13 C16.7712164,13 20.7048837,15.2931929 20.9979143,20.2 C21.0095879,20.3954741 20.9979143,21 20.2466999,21 C16.541124,21 11.0347247,21 3.72750223,21 C3.47671215,21 2.97953825,20.45918 3.00065168,20.1992055 Z" fill="#000000" fill-rule="nonzero" />*}
+{*                            </g>*}
+{*                        </svg>*}
+{*                    </span>*}
+{*            </button>*}
+{*        </div>*}
 </div>

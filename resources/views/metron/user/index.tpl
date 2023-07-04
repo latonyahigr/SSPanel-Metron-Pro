@@ -20,6 +20,7 @@
                             <div class="d-flex align-items-center">
                                 {if $user->isAbleToCheckin()}
                                     <a href="javascript:;"
+                                       data-class="{$user->class}"
                                        class="btn {$style[$theme_style]['global']['btn_subheader']} font-weight-bold py-3 px-6"
                                        id="checkin" onclick="index.checkin();">每日签到</a>
                                 {else}
@@ -106,13 +107,13 @@
                                                     </span>
                                                     <div class="d-flex flex-column ml-3 mr-5">
                                                         <div class="font-size-h4 {$style[$theme_style]['index']['text']} mb-2">
-                                                            <strong>{$user->unusedTraffic()}</strong></div>
+                                                            <strong>{$user->unusedTrafficGB()}GB</strong></div>
                                                         <p class="text-dark-50">剩余流量</p>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="card-body pt-2 pl-5 pr-3 pb-1">
-                                                <p class="text-dark-50">下次重置：{$user->valid_use_loop()}
+                                                <p class="text-dark-50">已用流量：{$user->usedTrafficGB()}GB
                                                     {if $metron['advanceResetFlow'] === true}
                                                         <span id="advance_reset_flow_onclick"
                                                               class="label {$style[$theme_style]['index']['dash2']['btn']} label-inline font-weight-lighter ml-1 mr-2 cursor_onclick"
@@ -450,9 +451,9 @@
                     indexLabelFontSize: 14,
                     showInLegend: true,
                     dataPoints: [
-                        { y: {$user->usedTrafficGB()}, legendText: "已用:{$user->usedTrafficGB()}GB"},
-                        { y: {$user->TodayusedTrafficGB()}, legendText: "今日已用:{$user->TodayusedTrafficGB()}GB"},
-                        { y: {$user->unusedTrafficGB()}, legendText: "剩余:{$user->unusedTrafficGB()}GB"},
+                        { y: {$user->usedTrafficGB()}, name:"已用(GB)", legendText: "已用:{$user->usedTrafficGB()}GB",labelIndex:"{$user->usedTrafficGB()}GB"},
+                        { y: {$user->TodayusedTrafficGB()}, name:"今日已用(GB)", legendText: "今日已用:{$user->TodayusedTrafficGB()}GB", labelIndex:"{$user->TodayusedTrafficGB()}GB"},
+                        { y: {$user->unusedTrafficGB()}, name:"剩余(GB)", legendText: "剩余:{$user->unusedTrafficGB()}GB", labelIndex: "{$user->unusedTrafficGB()}GB"},
                     ]
                 }]
             });

@@ -414,8 +414,8 @@
                 <p id="metronpay-modal-body-qrcode" style="display: none;"></p>
             </div>
             <div class="modal-footer">
-                <a id="to-pay" href="##" class="btn btn-primary">前往支付</a>
-                <button type="button" class="btn {$style[$theme_style]['modal']['btn_close']} font-weight-bold" data-dismiss="modal">关闭</button>
+                <a id="to-pay" href="##" class="btn btn-primary go-buy">前往支付</a>
+                <button type="button" class="btn {$style[$theme_style]['modal']['btn_close']} font-weight-bold" onclick="clearInterval(window.payTimer)" data-dismiss="modal">关闭</button>
             </div>
         </div>
     </div>

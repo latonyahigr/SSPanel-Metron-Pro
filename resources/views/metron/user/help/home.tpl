@@ -11,7 +11,7 @@
                                                 {/if}
 
                                                 {if $list_L1->name =='Android' }
-                                                    {$url = '/user/tutorial?os=Android&client=Clash'}
+                                                    {$url = '/user/tutorial?os=Android&client=Home'}
                                                 {/if}
 
                                                 {if $list_L1->name =='iOS' }
@@ -19,7 +19,7 @@
                                                 {/if}
 
                                                 {if $list_L1->name =='Mac' }
-                                                    {$url = '/user/tutorial?os=MacOS&client=Clash'}
+                                                    {$url = '/user/tutorial?os=MacOS&client=Home'}
                                                 {/if}
 
                                                 {if $list_L1->name =='Linux' }

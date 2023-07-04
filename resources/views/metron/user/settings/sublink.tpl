@@ -40,14 +40,15 @@
                                                         <label class="col-3 col-xl-3 col-lg-3 col-form-label text-right">新密码</label>
                                                         <div class="col-9 col-md-6 col-lg-9 col-xl-6">
                                                             <div class="input-group input-group-lg input-group-solid">
-                                                                <input class="form-control" type="text" value="" name="node_passwd" oldvalue="" />
+                                                                 <input class="form-control" type="text" value="" name="node_passwd" oldvalue="" id="pwd"/>
                                                             </div>
+                                                            <button type="button"  class="btn btn-primary font-weight-bold btn-sm  mt-4 mb-2" onclick="setting.createPwd();">随机生成密码</button>
                                                         </div>
                                                     </div>
                                                     <div class="row">
                                                         <label class="col-3 col-xl-3"></label>
                                                         <div class="col-9 col-md-6 col-lg-9 col-xl-6">
-                                                            <h5 class="font-weight-bold mt-10 mb-6">订阅链接重置</h5>
+                                                            <h5 class="font-weight-bold mt-4 mb-2">订阅链接重置</h5>
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">

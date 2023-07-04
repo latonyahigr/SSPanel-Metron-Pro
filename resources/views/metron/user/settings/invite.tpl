@@ -20,7 +20,10 @@
                                     <div class="flex-row-fluid ml-lg-8">
                                         <div class="row">
                                             <div class="col-md-5 col-lg-12 col-xl-5">
-                                                <div class="card card-custom bgi-no-repeat gutter-b {$metron['style_shadow']}" style="min-height: 250px; background-position: calc(100% + 0.5rem) calc(100% + 0.5rem); background-size: 100% auto; background-image: url({$metron['assets_url']}/media/svg/patterns/rhone-2.svg)">
+                                                <div class="card card-custom bgi-no-repeat gutter-b {$metron['style_shadow']}" style="min-height: 250px; background-position: calc(100% + 0.5rem) calc(100% + 0.5rem); background-size: 100% auto;">
+                                                    <div class="card-icon" style="color: #8c98f3;margin: -60px;position: absolute;right: 60px;top: 60px;">
+                                                        <i class="fas fa-yen-sign " style="font-size: 140px;"></i>
+                                                    </div>
                                                     <div class="card-body">
                                                         <div class="p-4">
                                                             <h3 class="{$style[$theme_style]['global']['title']} font-weight-bolder">返利余额</h3>
@@ -35,48 +38,61 @@
                                                     <div class="card-header border-0 pt-5">
                                                         <div class="card-title font-weight-bolder">
                                                             <div class="card-label text-primary font-weight-bold font-size-h3">
-                                                                <strong>&nbsp;&nbsp;邀请功能</strong>
+                                                                <strong>当您邀请朋友注册时</strong>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="card-body pt-1">
-                                                        <ul class="dashboard-tabs nav nav-pills row nav-primary row-paddingless m-0 p-0" role="tablist">
-                                                            <li class="nav-item d-flex col flex-grow-1 flex-shrink-0 mr-3 mb-3 mb-lg-0 cursor_onclick">
-                                                                <a class="nav-link border d-flex flex-grow-1 rounded flex-column align-items-center active" data-toggle="pill" href="#tab_invite_item">
-                                                                    <span class="nav-text font-size-lg py-2 font-weight-bold text-center">详情</span>
-                                                                </a>
-                                                            </li>
-                                                            <li class="nav-item d-flex col flex-grow-1 flex-shrink-0 mr-3 mb-3 mb-lg-0 cursor_onclick">
-                                                                <a class="nav-link border d-flex flex-grow-1 rounded flex-column align-items-center" data-toggle="pill" href="#tab_invite_setting">
-                                                                    <span class="nav-text font-size-lg py-2 font-weight-bold text-center">设置</span>
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                        <div class="separator separator-dashed separator-border-4 p-5"></div>
+{*                                                        <ul class="dashboard-tabs nav nav-pills row nav-primary row-paddingless m-0 p-0" role="tablist">*}
+{*                                                            <li class="nav-item d-flex col flex-grow-1 flex-shrink-0 mr-3 mb-3 mb-lg-0 cursor_onclick">*}
+{*                                                                <a class="nav-link border d-flex flex-grow-1 rounded flex-column align-items-center active" data-toggle="pill" href="#tab_invite_item">*}
+{*                                                                    <span class="nav-text font-size-lg py-2 font-weight-bold text-center">详情</span>*}
+{*                                                                </a>*}
+{*                                                            </li>*}
+{*                                                            <li class="nav-item d-flex col flex-grow-1 flex-shrink-0 mr-3 mb-3 mb-lg-0 cursor_onclick">*}
+{*                                                                <a class="nav-link border d-flex flex-grow-1 rounded flex-column align-items-center" data-toggle="pill" href="#tab_invite_setting">*}
+{*                                                                    <span class="nav-text font-size-lg py-2 font-weight-bold text-center">设置</span>*}
+{*                                                                </a>*}
+{*                                                            </li>*}
+{*                                                        </ul>*}
+{*                                                        <div class="separator separator-dashed separator-border-4 p-5"></div>*}
                                                         <div class="tab-content m-0 p-0">
                                                             <div class="tab-pane active" id="tab_invite_item" role="tabpanel">
-                                                                <div class="card-body pb-0 pl-0">
-                                                                    <div class="h2"><strong>当您邀请朋友注册时</strong></div>
+                                                                <div class="card-body pb-0 pl-0 pt-0">
+
                                                                     {if $user->rebate != 0}
-                                                                        <div class="h5 pt-1">您将获取对方<code>{if $user->c_rebate == 1 || $metron['c_rebate'] == true}每次{else}首次{/if}</code>充值金额的 <code>{if $user->rebate > 0}{$user->rebate}%{else}{$config["code_payback"]}%{/if}</code> 返利</div>
+                                                                        <div class="h6 pt-1">您将获取对方<code>{if $user->c_rebate == 1 || $metron['c_rebate'] == true}每次{else}首次{/if}</code>充值金额的 <code>{if $user->rebate > 0}{$user->rebate}%{else}{$config["code_payback"]}%{/if}</code> 返利以及 <code>{$config["invite_gift"]}GB</code> 流量奖励</div>
                                                                     {/if}
-                                                                    {if $config['invite_gift'] > 0}
-                                                                        <div class="h5 pt-1">您将一次性获得 <code>{$config["invite_gift"]}GB</code> 流量奖励</div>
-                                                                    {/if}
+                                                                    <div class="separator separator-dashed separator-border-1 mt-2 mb-2"></div>
+{*                                                                    {if $config['invite_gift'] > 0}*}
+{*                                                                        <div class="h6 pt-1">您将一次性获得 <code>{$config["invite_gift"]}GB</code> 流量奖励</div>*}
+{*                                                                    {/if}*}
+{*                                                                    <div class="separator separator-dashed separator-border-1 mt-2 mb-2"></div>*}
                                                                     {if $config['invite_get_money'] > 0}
-                                                                        <div class="h5 pt-1">TA将获得 <code>{$config["invite_get_money"]}</code> 元奖励作为初始资金</div>
+                                                                        <div class="h56 pt-1">TA将获得 <code>{$config["invite_get_money"]}</code> 元奖励作为初始资金</div>
                                                                     {/if}
+                                                                    <div class="separator separator-dashed separator-border-1 mt-2 mb-2"></div>
+                                                                    <div class="h6 pt-1">返利累计邀请5人并金额到达300元可发工单要求提现。</div>
+                                                                    <div class="separator separator-dashed separator-border-1 mt-2 mb-2"></div>
+                                                                    <div class="h6 pt-1">提现你需要承担当日实际购买USDT的汇率差以及第三方支付平台手续费。</div>
+                                                                    <div class="separator separator-dashed separator-border-1 mt-2 mb-2"></div>
+
+                                                                    <div class="h6 pt-1">目前所有结算货币单位为：USDT-TRC20</div>
+                                                                    <div class="separator separator-dashed separator-border-1 mt-2 mb-2"></div>
+                                                                    <div class="h6 pt-1">USDT提现你可至OKEX（www.okx.com）注册账户 后 点击充币 选择 USDT TRC20 复制地址发工单。</div>
+                                                                    <div class="separator separator-dashed separator-border-1 mt-2 mb-2"></div>
                                                                     <div class="h6 pt-3" style="font-size: 0.8em">剩余 &nbsp;<code>{$user->invite_num}</code>&nbsp; 次邀请次数</div>
                                                                     <div class="pt-2">
-                                                                        <button type="button" class="btn btn-primary btn-shadow btn-lg copy-text" data-clipboard-text="{$config["baseUrl"]}/auth/register?code={$code->code}">复制邀请链接</button>
-                                                                        <button type="button" class="btn btn-primary btn-shadow btn-lg copy-text" data-clipboard-text="{$code->code}">复制邀请码</button>
+                                                                        <button type="button" class="btn btn-primary btn-shadow btn-sm copy-text" data-clipboard-text="{$config["baseUrl"]}/auth/register?code={$code->code}">复制邀请链接</button>
+                                                                        <button class="btn btn-info btn-sm "  data-toggle="modal" id="reset-link" onclick="setting.invite('reset');">重置邀请链接</button>
+{*                                                                        <button type="button" class="btn btn-primary btn-shadow btn-lg copy-text" data-clipboard-text="{$code->code}">复制邀请码</button>*}
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             <div class="tab-pane" id="tab_invite_setting" role="tabpanel">
                                                                 <div class="card-body pb-0">
                                                                     <div class="pb-5">
-                                                                        <button class="btn btn-primary"  data-toggle="modal" id="reset-link" onclick="setting.invite('reset');">重置邀请码/链接</button>
+                                                                        <button class="btn btn-primary"  data-toggle="modal" id="reset-link" onclick="setting.invite('reset');">重置邀请链接</button>
                                                                     </div>
                                                                     {if $config['invite_price']>=0 && $user->invite_num >= 0}
                                                                     <div class="form-group" id="pay_code_form">

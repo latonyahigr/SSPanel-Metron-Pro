@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2023-06-24 23:55:51
+/* Smarty version 3.1.48, created on 2023-06-30 18:20:20
   from 'D:\XProject\SSPanel\resources\views\metron\user\shop.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_64971207c30b51_76248163',
+  'unifunc' => 'content_649eac6424b7b8_56860736',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'fc27ef6c9eb0390cc3d17f0e8353f4110b1380cb' => 
     array (
       0 => 'D:\\XProject\\SSPanel\\resources\\views\\metron\\user\\shop.tpl',
-      1 => 1686149747,
+      1 => 1688120399,
       2 => 'file',
     ),
   ),
@@ -25,7 +25,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:include/global/scripts.tpl' => 1,
   ),
 ),false)) {
-function content_64971207c30b51_76248163 (Smarty_Internal_Template $_smarty_tpl) {
+function content_649eac6424b7b8_56860736 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
     <head>
@@ -616,9 +616,9 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 <p id="metronpay-modal-body-qrcode" style="display: none;"></p>
             </div>
             <div class="modal-footer">
-                <a id="to-pay" href="##" class="btn btn-primary">前往支付</a>
+                <a id="to-pay" href="##" class="btn btn-primary go-buy">前往支付</a>
                 <button type="button" class="btn <?php echo $_smarty_tpl->tpl_vars['style']->value[$_smarty_tpl->tpl_vars['theme_style']->value]['modal']['btn_close'];?>
- font-weight-bold" data-dismiss="modal">关闭</button>
+ font-weight-bold" onclick="clearInterval(window.payTimer)" data-dismiss="modal">关闭</button>
             </div>
         </div>
     </div>

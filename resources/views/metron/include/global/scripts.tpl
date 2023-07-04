@@ -3,7 +3,7 @@
 <script src="{$metron['assets_url']}/plugins/global/plugins.bundle.js"></script>
 <script src="{$metron['assets_url']}/js/metron-plugin.js"></script>
 <script src="{$metron['assets_url']}/js/scripts.js"></script>
-<script src="{$metron['assets_url']}/js/metron.js"></script>
+<script src="/theme/metron/js/metron1.js?v=24"></script>
 
 {if $metron['enable_cust'] === 'crisp' && $metron['crisp_id'] != ''}
     {include file='include/global/crisp.tpl'}

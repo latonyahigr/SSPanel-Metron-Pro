@@ -14,7 +14,7 @@
                             <div class="container d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">
                                 <div class="d-flex align-items-center flex-wrap mr-2">
                                     <div class="d-flex flex-column">
-                                        <h2 class="text-white font-weight-bold my-2 mr-5">Windows 使用教程</h2>
+                                        <h2 class="text-white font-weight-bold my-2 mr-5">Android 使用教程</h2>
                                     </div>
                                 </div>
                                 <div class="d-flex align-items-center">
@@ -37,7 +37,8 @@
 
                                                 <div class="row pl-5 pr-5">
                                                     <div class="row">
-                                                        <a href="https://wwi.lanzoui.com/iPZrfipd20d" class="btn btn-pill btn-ssr  mr-4" target="_blank">&nbsp;&nbsp;<i class="metron-ssr text-white"></i>下载地址</a>
+                                                        <a href="https://wwi.lanzoub.com/iCZCn018mi2h" class="btn btn-pill btn-ssr  mr-4" target="_blank">&nbsp;&nbsp;<i class="metron-ssr text-white"></i>下载地址</a>
+                                                        <a href="http://down.suying666.org/sr-az.apk" class="btn btn-pill btn-ssr  mr-4" target="_blank">&nbsp;&nbsp;<i class="metron-ssr text-white"></i>备用下载地址</a>
                                                         <a href="/user/tutorial?os=Windows&client=SSR" class="btn btn-pill btn-alipay " >&nbsp;&nbsp;<i class="metron-quantumultx text-white"></i>使用教程</a>
                                                      </div>
                                                 </div>
@@ -53,12 +54,31 @@
 
                                                 <div class="row pl-5 pr-5">
                                                     <div class="row">
-                                                        <a href="https://wwi.lanzoui.com/icv7Idzymkj" class="btn btn-pill btn-v2ray  mr-4" target="_blank">&nbsp;&nbsp;<i class="metron-v2rayng text-white"></i>下载地址</a>
-{*                                                        <a href="http://down.suying666.org/j/Win-V2Ray.mp4" class="btn btn-pill btn-alipay " target="_blank">&nbsp;&nbsp;<i class="metron-quantumultx text-white"></i>视频教程</a>*}
+                                                        <a href="https://wwi.lanzoub.com/i9zh2102kz4d" class="btn btn-pill btn-v2ray  mr-4" target="_blank">&nbsp;&nbsp;<i class="metron-v2rayng text-white"></i>下载地址</a>
+                                                        <a href="http://down.suying666.org/v2.apk" class="btn btn-pill btn-ssr  mr-4" target="_blank">&nbsp;&nbsp;<i class="metron-ssr text-white"></i>备用下载地址</a>
+{*                                                        <a href="http://down.suying666.org/j/android-V2ray.mp4" class="btn btn-pill btn-alipay " target="_blank">&nbsp;&nbsp;<i class="metron-quantumultx text-white"></i>视频教程</a>*}
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
+
+                                        <div class="card card-custom gutter-b {$metron['style_shadow']}">
+                                            <div class="card-header">
+                                                <div class="card-title">
+                                                    <h2 class="font-weight-bold">Clash客户端：</h2>
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+
+                                                <div class="row pl-5 pr-5">
+                                                    <div class="row">
+                                                        <a href="https://github.com/Kr328/ClashForAndroid" class="btn btn-pill btn-v2ray  mr-4" target="_blank">&nbsp;&nbsp;<i class="metron-v2rayng text-white"></i>下载地址</a>
+                                                        <a href="/user/tutorial?os=Android&client=Clash" class="btn btn-pill btn-alipay " >&nbsp;&nbsp;<i class="metron-quantumultx text-white"></i>使用教程&nbsp;&nbsp;</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
                                         <div class="card card-custom gutter-b {$metron['style_shadow']}">
                                             <div class="card-header">
                                                 <div class="card-title">

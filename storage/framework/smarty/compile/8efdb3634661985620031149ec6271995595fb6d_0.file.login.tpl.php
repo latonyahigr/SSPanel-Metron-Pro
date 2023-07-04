@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2023-06-24 23:53:05
+/* Smarty version 3.1.48, created on 2023-06-28 17:03:45
   from 'D:\XProject\SSPanel\resources\views\metron\auth\login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_64971161dba558_82457366',
+  'unifunc' => 'content_649bf7714618a5_04209526',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8efdb3634661985620031149ec6271995595fb6d' => 
     array (
       0 => 'D:\\XProject\\SSPanel\\resources\\views\\metron\\auth\\login.tpl',
-      1 => 1686843912,
+      1 => 1687942757,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:include/auth/scripts.tpl' => 1,
   ),
 ),false)) {
-function content_64971161dba558_82457366 (Smarty_Internal_Template $_smarty_tpl) {
+function content_649bf7714618a5_04209526 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
     <head>
@@ -33,7 +33,9 @@ function content_64971161dba558_82457366 (Smarty_Internal_Template $_smarty_tpl)
 
                         <div class="login-signin">
                             <div class="mb-10">
-                                <h3>登录用户中心</h3>
+                                <h4 class="text-dark font-weight-normal mb-4" style="font-size: 22px;">欢迎使用 <span class="font-weight-bold"><?php echo $_smarty_tpl->tpl_vars['config']->value["appName"];?>
+</span></h4>
+                                <p class="text-muted">欢迎登录用户中心</p>
                             </div>
                             <form class="form" id="login_form">
                                 <div id="login_form_1">
@@ -105,6 +107,11 @@ function content_64971161dba558_82457366 (Smarty_Internal_Template $_smarty_tpl)
                                 </div>
                             </div>
                         </div>
+                         <div class="text-center mt-5 text-small" style="margin-top: 3rem!important;">
+                            Copyright © 2023 <?php echo $_smarty_tpl->tpl_vars['config']->value["appName"];?>
+
+                            <div class="mt-2" id="copyright">Powered by <a href="/staff">SSPANEL</a></div>
+                         </div>
 
                         <?php $_smarty_tpl->_subTemplateRender('file:include/auth/scripts.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>

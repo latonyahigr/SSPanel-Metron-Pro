@@ -129,6 +129,9 @@
     input:-webkit-autofill {
         -webkit-text-fill-color: #000 !important
     }
+    .font-weight-bold{
+        font-weight: 700!important;
+    }
 </style>
 
 </head>

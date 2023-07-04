@@ -4,7 +4,7 @@
 var global = function () {
     var _0x25fd48 = function () {
         if (document.getElementById("theme_copyright")) {
-            $("#theme_copyright").html("<a href=\"/staff\" target=\"_blank\" class=\"nav-link pr-3 pl-0\">SSPANEL</a><a href=\"https://t.me/metrontheme_bot\" target=\"_blank\" class=\"nav-link px-3\">Metron</a>");
+            $("#theme_copyright").html("<a href=\"/staff\" target=\"_blank\" class=\"nav-link pr-3 pl-0\">SSPANEL</a>");
         } else {
             Swal.fire({
                 'icon': "error",
@@ -946,7 +946,6 @@ if (urlPath.indexOf("/code") >= 0) {
                                 document.getElementById("to-pay").href = _0x12675b.url;
                                 KTApp.unblockPage();
                                 $("#metronpay-modal").modal();
-                                console.log(_0x12675b);
                                 break;
 
                             case "img":
@@ -1748,41 +1747,6 @@ if (urlPath.indexOf("/shop") >= 0) {
             });
         };
 
-
-        function checkStatus(_0x57637d){
-            $.ajax({
-                'type': "POST",
-                'url': "/payment/status",
-                'dataType': "json",
-                'data': {
-                    'tradeno': _0x57637d,
-                    'checkshop': 1
-                },
-                'success': _0x40129a => {
-                    if (_0x40129a.result === 1) {
-                        $("#metronpay-content").html("<div class=\"text-center\"><p>充值已到账，正在为您购买套餐<span class=\"kt-spinner kt-spinner--md kt-spinner--info\"></span></p></div>");
-
-                        if (_0x40129a.buyshop === 1) {
-                            Swal.fire({
-                                'icon': "success",
-                                'title': "购买成功!"
-                            }).then(_0x1d28c4 => {
-                                window.location.href = "/user";
-                            });
-                            return;
-                        } else {
-                            _0x120e97("metronPay_status", _0x57637d);
-                        }
-                    } else {
-                        _0x120e97("metronPay_status", _0x57637d);
-                    }
-                },
-                'error': _0x4c64a0 => {
-                    _0x120e97("metronPay_status", _0x57637d);
-                }
-            });
-        }
-
         var _0x4265fd = function () {
             if (shopinfo.need <= 0) {
                 _0x38311c(shopinfo.id);
@@ -1837,12 +1801,6 @@ if (urlPath.indexOf("/shop") >= 0) {
                                     break;
 
                                 case "url":
-
-                                    if(_0x59e870.paytype ==='alipaywap'){
-                                        setTimeout(function (){
-                                            checkStatus(_0x59e870.tradeno)
-                                        },3000);
-                                    }
                                     $("#metronpay-modal-body-qrcode").hide();
                                     $("#metronpay-modal-body-url").show();
                                     $("#to-pay").show();
@@ -4393,7 +4351,6 @@ if (urlPath.indexOf("/setting") > -1) {
                         break;
                 }
             },
-            ''
             'sublink': function () {
                 _0x3a5769("reset");
             },
