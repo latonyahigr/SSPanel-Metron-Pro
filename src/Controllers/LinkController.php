@@ -72,6 +72,14 @@ class LinkController extends BaseController
             return null;
         }
 
+//        if ($user->node_connector != 0){
+//            //等于0就是不限制了
+//            if ($user->online_ip_count() > $user->node_connector){
+//                return null;
+//            }
+//
+//        }
+
         $opts = $request->getQueryParams();
 
         // 订阅节点筛选(定制)

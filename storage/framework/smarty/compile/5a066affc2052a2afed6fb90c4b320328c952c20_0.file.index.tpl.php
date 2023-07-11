@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2023-07-03 22:18:45
+/* Smarty version 3.1.48, created on 2023-07-04 13:32:41
   from 'D:\XProject\SSPanel\resources\views\metron\user\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_64a2d8c5873582_77172336',
+  'unifunc' => 'content_64a3aef99b79d2_45134885',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5a066affc2052a2afed6fb90c4b320328c952c20' => 
     array (
       0 => 'D:\\XProject\\SSPanel\\resources\\views\\metron\\user\\index.tpl',
-      1 => 1688393829,
+      1 => 1688448756,
       2 => 'file',
     ),
   ),
@@ -28,7 +28,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:include/index/pop.tpl' => 1,
   ),
 ),false)) {
-function content_64a2d8c5873582_77172336 (Smarty_Internal_Template $_smarty_tpl) {
+function content_64a3aef99b79d2_45134885 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -100,7 +100,7 @@ function content_64a2d8c5873582_77172336 (Smarty_Internal_Template $_smarty_tpl)
                                                     <div class="d-flex flex-column ml-3 mr-5">
                                                         <div class="font-size-h4 <?php echo $_smarty_tpl->tpl_vars['style']->value[$_smarty_tpl->tpl_vars['theme_style']->value]['index']['text'];?>
  mb-2">
-                                                            <strong><?php if ($_smarty_tpl->tpl_vars['user']->value->class_expire != "1989-06-04 00:05:00" && $_smarty_tpl->tpl_vars['user']->value->class >= 1) {?>
+                                                            <strong><?php if ($_smarty_tpl->tpl_vars['user']->value->class_expire != "1989-06-04 00:05:00") {?>
                                                                     <span class="counter"><?php echo $_smarty_tpl->tpl_vars['class_left_days']->value;?>
 </span>
                                                                     天<?php } elseif ($_smarty_tpl->tpl_vars['user']->value->class <= 0) {?>
@@ -125,7 +125,7 @@ echo $_smarty_tpl->tpl_vars['user_level_name']->value;
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                                     :
-                                                    <?php if ($_smarty_tpl->tpl_vars['user']->value->class_expire != "1989-06-04 00:05:00" && $_smarty_tpl->tpl_vars['user']->value->class >= 1) {?>
+                                                    <?php if ($_smarty_tpl->tpl_vars['user']->value->class_expire != "1989-06-04 00:05:00") {?>
                                                         <?php echo substr($_smarty_tpl->tpl_vars['user']->value->class_expire,0,10);?>
  到期
                                                     <?php } elseif ($_smarty_tpl->tpl_vars['user']->value->class == 0) {?>
@@ -503,7 +503,7 @@ echo substr($_smarty_tpl->tpl_vars['user']->value->lastSsTime(),5);
     <?php }?>
     <?php echo '<script'; ?>
 >
-        <?php if ($_smarty_tpl->tpl_vars['user']->value->class == 0) {?>
+        <?php if ($_smarty_tpl->tpl_vars['user']->value->class == 0 && $_smarty_tpl->tpl_vars['user']->value->class_expire < 1) {?>
         $('#userClassExpire').modal()
         <?php }?>
         <?php if ($_smarty_tpl->tpl_vars['user']->value->class > 0 && substr($_smarty_tpl->tpl_vars['user']->value->unusedTraffic(),0,-2) > 0 && ((substr($_smarty_tpl->tpl_vars['user']->value->unusedTraffic(),0,-2) <= 5 && substr($_smarty_tpl->tpl_vars['user']->value->unusedTraffic(),-2) == 'GB') || (substr($_smarty_tpl->tpl_vars['user']->value->unusedTraffic(),0,-2) <= 1024 && substr($_smarty_tpl->tpl_vars['user']->value->unusedTraffic(),-2) == 'MB'))) {?>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2023-07-03 22:13:47
+/* Smarty version 3.1.48, created on 2023-07-11 16:01:05
   from 'D:\XProject\SSPanel\resources\views\metron\include\auth\head.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_64a2d79b0f0084_50808729',
+  'unifunc' => 'content_64ad0c41457f68_74559341',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '58c1af1ddb8c8a7ed24fe9555305fad22f5c4829' => 
     array (
       0 => 'D:\\XProject\\SSPanel\\resources\\views\\metron\\include\\auth\\head.tpl',
-      1 => 1688120562,
+      1 => 1688478793,
       2 => 'file',
     ),
   ),
@@ -20,10 +20,11 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_64a2d79b0f0084_50808729 (Smarty_Internal_Template $_smarty_tpl) {
+function content_64ad0c41457f68_74559341 (Smarty_Internal_Template $_smarty_tpl) {
 ?><meta charset="UTF-8"/>
 <meta name="renderer" content="webkit"/>
-<meta name="description" content="Updates and statistics"/>
+<meta name="description" content="顷刻加载，快如闪电。专为中国用户优化加速的优质网络中继服务商。">
+<meta name="keywords" content="网络加速,网络中继,访问github慢,优化访问github">
 <meta name="apple-mobile-web-app-capable" content="yes"/>
 <meta name="format-detection" content="telephone=no,email=no"/>
 <meta name="viewport"

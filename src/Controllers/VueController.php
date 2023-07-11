@@ -125,11 +125,11 @@ class VueController extends BaseController
                 return $res;
             }
 
-            if ($gift_user->class == 0) {
-                $res['ret'] = 0;
-                $res['msg'] = '邀请人不是VIP';
-                return $res;
-            }
+//            if ($gift_user->class == 0) {
+//                $res['ret'] = 0;
+//                $res['msg'] = '邀请人不是VIP';
+//                return $res;
+//            }
 
             if ($gift_user->invite_num == 0) {
                 $res['ret'] = 0;

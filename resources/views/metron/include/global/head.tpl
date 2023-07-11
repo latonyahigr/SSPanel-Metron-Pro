@@ -1,6 +1,7 @@
 <meta charset="UTF-8" />
 <meta name="renderer" content="webkit" />
-<meta name="description" content="Updates and statistics" />
+<meta name="description" content="顷刻加载，快如闪电。专为中国用户优化加速的优质网络中继服务商。">
+<meta name="keywords" content="网络加速,网络中继,访问github慢,优化访问github">
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="format-detection" content="telephone=no,email=no" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />

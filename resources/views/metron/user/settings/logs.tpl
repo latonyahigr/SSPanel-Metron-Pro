@@ -20,7 +20,7 @@
                                     <div class="flex-row-fluid ml-lg-8">
                                         
                                         <div class="row">
-                                            <div class="col-lg-6">
+                                            <div class="col-lg-12">
                                                 
                                                 <div class="card card-custom gutter-b card-stretch {$metron['style_shadow']}">
                                                     <div class="card-header flex-wrap border-0 pt-6">
@@ -35,7 +35,7 @@
                                                 </div>
                                                 
                                             </div>
-                                            <div class="col-lg-6">
+                                            <div class="col-lg-12">
                                                 
                                                 <div class="card card-custom gutter-b card-stretch {$metron['style_shadow']}">
                                                     <div class="card-header flex-wrap border-0 pt-6">
@@ -51,36 +51,7 @@
 
                                             </div>
                                         </div>
-                                        <div class="card card-custom gutter-b {$metron['style_shadow']}">
-                                            <div class="card-header flex-wrap border-0 pt-6">
-                                                <div class="card-title">
-                                                    <h3 class="card-label text-primary"><strong>订阅记录</strong>
-                                                    <span class="d-block text-muted pt-2 font-size-sm">记录账号下每次从订阅链接获取节点</span></h3>
-                                                </div>
-                                            </div>
-                                            <div class="card-body pt-0">
-                                                <div class="mb-7">
-                                                    <div class="row align-items-center">
-                                                        <div class="col-lg-9 col-xl-8">
-                                                            <div class="row align-items-center">
-                                                                <div class="col-md-4 my-2 my-md-0">
-                                                                    <div class="d-flex align-items-center">
-                                                                        <label class="mr-3 mb-0 d-none d-md-block">状态:</label>
-                                                                        <select class="form-control" id="subscribe_log_type">
-                                                                            <option value="">全部</option>
-                                                                            {foreach $metron['index_sub'] as $subtype}
-                                                                            <option value="{$subtype}">{$subtype}</option>
-                                                                            {/foreach}
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="datatable datatable-bordered datatable-head-custom" id="ajax_subscribe_log_data"></div>
-                                            </div>
-                                        </div>
+
                                     </div>
 
                                 </div>

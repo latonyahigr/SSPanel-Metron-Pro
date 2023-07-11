@@ -354,7 +354,7 @@ class User extends Model
         $total = Ip::where('datetime', '>=', time() - 90)->where('userid', $uid)->orderBy('userid', 'desc')->get();
         $unique_ip_list = array();
         foreach ($total as $single_record) {
-            $single_record->ip = Tools::getRealIp($single_record->ip);
+            $single_record->ip = Tools::getRealIp($single_record->ip)   ;
             $is_node = Node::where('node_ip', $single_record->ip)->first();
             if ($is_node) {
                 continue;

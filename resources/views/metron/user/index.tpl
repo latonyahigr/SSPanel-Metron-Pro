@@ -59,12 +59,13 @@
                                                     </span>
                                                     <div class="d-flex flex-column ml-3 mr-5">
                                                         <div class="font-size-h4 {$style[$theme_style]['index']['text']} mb-2">
-                                                            <strong>{if $user->class_expire!="1989-06-04 00:05:00" && $user->class >= 1}
-                                                                    <span class="counter">{$class_left_days}</span>
-                                                                    天{elseif $user->class <= 0}
-                                                                    <span class="counter">已过期</span>
-                                                                {else}未知{/if}</strong></div>
-                                                        <p class="text-dark-50">会员时长</p>
+                                                            <div class="font-size-h4 {$style[$theme_style]['index']['text']} mb-2">
+                                                                <strong>{if $user->class_expire!="1989-06-04 00:05:00" && $user->class >= 1}
+                                                                        <span class="counter">{$class_left_days}</span>
+                                                                        天{elseif $user->class <= 0}
+                                                                        <span class="counter">已过期</span>
+                                                                    {else}未知{/if}</strong></div>
+                                                            <p class="text-dark-50">会员时长</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -74,7 +75,7 @@
                                                         {if $user->class == $user_level_class}{$user_level_name}{/if}
                                                     {/foreach}
                                                     :
-                                                    {if $user->class_expire != "1989-06-04 00:05:00" && $user->class >= 1}
+                                                    {if $user->class_expire != "1989-06-04 00:05:00"}
                                                         {substr($user->class_expire, 0, 10)} 到期
                                                     {elseif $user->class == 0}
                                                         已过期
@@ -400,7 +401,7 @@
         <script> mt.pop('{$metron['pop_time']}') </script>
     {/if}
     <script>
-        {if $user->class == 0}
+        {if $user->class == 0 && $user->class_expire < 1}
         $('#userClassExpire').modal()
         {/if}
         {if $user->class > 0 && substr($user->unusedTraffic(),0,-2) > 0 && ((substr($user->unusedTraffic(),0,-2) <= 5 && substr($user->unusedTraffic(),-2) == 'GB') || (substr($user->unusedTraffic(),0,-2) <= 1024 && substr($user->unusedTraffic(),-2) == 'MB'))}

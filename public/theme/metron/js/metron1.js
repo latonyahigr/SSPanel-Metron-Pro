@@ -467,8 +467,7 @@ if (urlPath.indexOf("/user") > -1 && urlPath.indexOf("/user/") < 0 || urlPath.in
     };
 
     var _0x32505b = function () {
-      console.log($('#checkin').data('class'))
-      if($('#checkin').data('class')  < 2){
+      if($('#checkin').data('class')  < 1){
         //mt.mswal("error", '青铜会员以上才能使用签到功能');
         Swal.fire({
           'icon': "error",
@@ -476,7 +475,6 @@ if (urlPath.indexOf("/user") > -1 && urlPath.indexOf("/user/") < 0 || urlPath.in
         });
         return ;
       }
-      return
       $("#checkin").text("请稍候...").attr("disabled", true);
       $.ajax({
         'type': "POST",
