@@ -8,10 +8,10 @@
       content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
 <meta http-equiv="Cache-Control" content="no-siteapp"/>
-<link href="{$metron['assets_url']}/css/fonts.css?family=Poppins:300,400,500,600,700" rel="stylesheet"/>
-<link href="{$metron['assets_url']}/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css"/>
-<link href="{$metron['assets_url']}/css/style.bundle.css" rel="stylesheet" type="text/css"/>
-<link href="{$metron['assets_url']}/css/pages/auth/style-1.css" rel="stylesheet" type="text/css"/>
+<link href="/theme/metron/css/fonts.css?family=Poppins:300,400,500,600,700" rel="stylesheet"/>
+<link href="/theme/metron/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css"/>
+<link href="/theme/metron/css/style.bundle.css" rel="stylesheet" type="text/css"/>
+<link href="/theme/metron/css/pages/auth/style-1.css" rel="stylesheet" type="text/css"/>
 <link rel="shortcut icon" href="/favicon.ico"/>
 <style>
     .background-walk-y {
