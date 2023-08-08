@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <title>Windows 使用教程 &mdash; {$config["appName"]}</title>
-        <link href="{$metron['assets_url']}/css/client/metron-icon.css" rel="stylesheet" type="text/css" />
+        <link href="/theme/metron/css/client/metron-icon.css" rel="stylesheet" type="text/css" />
         <link href="{$metron['assets_url']}/plugins/tutorial/lightbox/lightbox.min.css" rel="stylesheet" >
         {include file='include/global/head.tpl'}
         <style>
@@ -61,7 +61,7 @@
                                                     <div class="row">
                                                         <a href="https://wwi.lanzoui.com/iMzCQdzyq6j" class="btn btn-pill btn-v2ray  mr-4" target="_blank">&nbsp;&nbsp;<i class="metron-v2rayng text-white"></i>下载地址</a>
                                                         <a href="http://down.suying666.org/v2.dmg" class="btn btn-pill btn-ssr  mr-4" target="_blank">&nbsp;&nbsp;<i class="metron-ssr text-white"></i>备用下载地址</a>
-{*                                                        <a href="http://down.suying666.org/j/android-V2ray.mp4" class="btn btn-pill btn-alipay " target="_blank">&nbsp;&nbsp;<i class="metron-quantumultx text-white"></i>视频教程</a>*}
+                                                        <a href="http://haituncloud.xyz/assets/v2r-mac.mov" class="btn btn-pill btn-alipay " target="_blank">&nbsp;&nbsp;<i class="metron-quantumultx text-white"></i>视频教程</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -77,7 +77,11 @@
 
                                                 <div class="row pl-5 pr-5">
                                                     <div class="row">
-                                                        <a href="/user/tutorial?os=MacOS&client=Clash" class="btn btn-pill btn-alipay " >&nbsp;&nbsp;<i class="metron-quantumultx text-white"></i>使用教程&nbsp;&nbsp;</a>
+                                                        <a href="https://github.com/yichengchen/clashX/releases/download/1.116.3/ClashX.app.dSYM.zip" class="btn btn-pill btn-ClashR  mr-4" target="_blank">&nbsp;&nbsp;<i class="metron-clash text-white"></i>下载地址</a>
+                                                        <a href="/user/tutorial?os=MacOS&client=Clash" class="btn btn-pill btn-alipay mr-4" >&nbsp;&nbsp;<i class="metron-quantumultx text-white"></i>使用教程&nbsp;&nbsp;</a>
+
+ <a href="http://haituncloud.xyz/assets/ssr-mac.mp4" class="btn btn-pill btn-alipay " target="_blank">&nbsp;&nbsp;<i class="metron-quantumultx text-white"></i>视频教程</a>
+
                                                     </div>
                                                 </div>
                                             </div>

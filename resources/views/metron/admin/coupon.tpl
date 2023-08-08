@@ -82,6 +82,30 @@
                 </div>
             </div>
 
+            <div aria-hidden="true" class="modal modal-va-middle fade" id="delete_modal" role="dialog"
+                 tabindex="-1">
+                <div class="modal-dialog modal-xs">
+                    <div class="modal-content">
+                        <div class="modal-heading">
+                            <a class="modal-close" data-dismiss="modal">×</a>
+                            <h2 class="modal-title">确认要删除？</h2>
+                        </div>
+                        <div class="modal-inner">
+                            <p>请您确认。</p>
+                        </div>
+                        <div class="modal-footer">
+                            <p class="text-right">
+                                <button class="btn btn-flat btn-brand-accent waves-attach waves-effect"
+                                        data-dismiss="modal" type="button">取消
+                                </button>
+                                <button class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal"
+                                        id="delete_input" type="button">确定
+                                </button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
             {include file='dialog.tpl'}
 
 
@@ -132,4 +156,39 @@
             })
         })
     })
+</script>
+<script>
+    function delete_modal_show(id) {
+        deleteid = id;
+        $("#delete_modal").modal();
+    }
+
+
+    function delete_id() {
+        $.ajax({
+            type: "DELETE",
+            url: "/admin/coupon",
+            dataType: "json",
+            data: {
+                id: deleteid
+            },
+            success: data => {
+                if (data.ret) {
+                    $("#result").modal();
+                    $$.getElementById('msg').innerHTML = data.msg;
+                    {include file='table/js_delete.tpl'}
+                } else {
+                    $("#result").modal();
+                    $$.getElementById('msg').innerHTML = data.msg;
+                }
+            },
+            error: jqXHR => {
+                $("#result").modal();
+                $$.getElementById('msg').innerHTML = `${ldelim}data.msg{rdelim} 发生错误了。`;
+            }
+        });
+    }
+
+    $('#delete_input').on('click',delete_id)
+
 </script>

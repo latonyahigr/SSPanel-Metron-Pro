@@ -46,6 +46,22 @@
                                         <div class="card card-custom gutter-b {$metron['style_shadow']}">
                                             <div class="card-header">
                                                 <div class="card-title">
+                                                    <h2 class="font-weight-bold">Clash客户端：</h2>
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+
+                                                <div class="row pl-5 pr-5">
+                                                    <div class="row">
+                                                        <a href="https://github.com/Fndroid/clash_for_windows_pkg/releases/download/0.20.28/Clash.for.Windows.Setup.0.20.28.arm64.exe" class="btn btn-pill btn-v2ray  mr-4" target="_blank">&nbsp;&nbsp;<i class="metron-clash text-white"></i>下载地址</a>
+                                                        <a href="/user/tutorial?os=Windows&client=Clash" class="btn btn-pill btn-alipay " >&nbsp;&nbsp;<i class="metron-quantumultx text-white"></i>使用教程</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card card-custom gutter-b {$metron['style_shadow']}">
+                                            <div class="card-header">
+                                                <div class="card-title">
                                                     <h2 class="font-weight-bold">V2ray客户端：</h2>
                                                 </div>
                                             </div>

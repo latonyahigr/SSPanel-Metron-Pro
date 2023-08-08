@@ -30,16 +30,14 @@ $_MT['domain_info']  = true;                     // 当用户访问网站的地�
 $_MT['domain_time']  = 15;                     // 弹出后间隔多久再提示 (单位:分钟)
 
 $_MT['enable_pop']   = true;                      // 开启右下角重要通知弹窗
-$_MT['pop_time']     = 1440;                          // 每次弹出间隔多久时间 (单位:分钟)
+$_MT['pop_time']     = 10;                          // 每次弹出间隔多久时间 (单位:分钟)
 
 /**  弹窗内容
  * [ 加粗 font-weight-bold 灰色 text-muted 紫色 text-primary 蓝色 text-info 绿色 text-success 橙色 text-warning 红色 text-danger ]
  * [ 左 : text-left 中 : text-center 右 : text-right ];
  **/
 $_MT['pop_text'] = '
-<p class="text-danger font-weight-bold">如何防止网站被污染打不开？</p>
-<p class="text-muted font-weight-bold">
-收藏网址 <a href="https://url.com" target=”_blank”>https://url.com</a> (如果卡在英文界面进不去，请把网页翻译功能关闭重试)，点击第一个图标即可进入最新网站，后续如有更换域名也会优先更新此处链接<br>
+<p class="text-danger font-weight-bold mr-4" style="font-size:24px">关注Telegram群组，领取下个月福利优惠码。  <a href="https://t.me/haitunvpn" target="_blank">点击加入</a></p>
 </p>
 ';
 
@@ -65,9 +63,9 @@ $_MT['daily_bonus_settings'] = [  // 为不同等级给不同的签到流量，�
 ];
 
 #####  返利设置  --------------------------------------------------------------------------------------------
-$_MT['c_rebate']            = false;            // true: 默认所有用户都循环返利, false:除了单独用户设置为循环外,其他用户都只会获取被邀请用户的首次充值金额
-$_MT['invite_user']         = false;            // 用户可查看自己邀请的所有用户
-$_MT['invite_user_for']     = false;            // 只有设置为循环返利的用户可查看自己邀请的所有用户(仅当上方选项开启时生效)
+$_MT['c_rebate']            = true;            // true: 默认所有用户都循环返利, false:除了单独用户设置为循环外,其他用户都只会获取被邀请用户的首次充值金额
+$_MT['invite_user']         = true;            // 用户可查看自己邀请的所有用户
+$_MT['invite_user_for']     = true;            // 只有设置为循环返利的用户可查看自己邀请的所有用户(仅当上方选项开启时生效)
 
 $_MT['take_back_total']     = 1;        // 申请转账提现需大于多少金额, 0 为不限制
 $_MT['agent_menu_enable']   = true;     // 菜单显示 代理中心 (代理中心需额外 Agent 授权, 未购买无法使用);
@@ -80,7 +78,8 @@ $_MT['user_level'] = [      // 等级 => 对应的名称显示
     0 => '免费会员',
     1 => '青铜会员',
     2 => '白银会员',
-    3 => '钻石会员',
+    3 => '黄金会员',
+    4 => '钻石会员'
 ];
 #####  用户注册  --------------------------------------------------------------------------------------------
 $_MT['register_code']               = false;          // true: 注册必须邀请码, false: 邀请码可不填 (admin面板 - 用户注册 - 将注册模式改为 invite)
@@ -195,7 +194,7 @@ $_MT['pay_alipay_3']     = 'none';        // 支付宝3
 $_MT['max_alipay_num'] = 0;     // 使用支付宝支付时, 金额大于等于设定值, 使用下方支付方式 (设置 0 不使用)
 $_MT['max_alipay_pay'] = 'none';      // 支付金额大于上面设置的值时, 使用此支付方式
 
-$_MT['pay_wxpay']      = 'codepay';      // 微信默认
+$_MT['pay_wxpay']      = 'none';      // 微信默认
 $_MT['pay_wxpay_2']      = 'none';      // 微信2
 $_MT['pay_wxpay_3']      = 'none';      // 微信3
 $_MT['max_wxpay_num']  = 0;     // 使用微信支付时, 金额大于等于设定值, 使用下方支付方式 (设置 0 不使用)
@@ -279,21 +278,20 @@ $_MT['shop_plan'] = array(
             '年付' => 16,
         ),
     ),
-    //   '旗舰大流量版' => array(            // 需要多个套餐可以自己复制array增加到下面
-    //       '描述' => array(
-    //           '月付' => 17,
-    //           '季度' => 18,
-    //           '半年' => 19,
-    //           '年付' => 20,
-    //       ),
-    //   ),
+ //   '旗舰大流量版' => array(            // 需要多个套餐可以自己复制array增加到下面
+ //       '描述' => array(
+ //           '月付' => 17,
+ //           '季度' => 18,
+ //           '半年' => 19,
+ //           '年付' => 20,
+ //       ),
+ //   ),
 
 
 
 
 
 );
-
 
 # ┌──────────────────────────────────────────────────────────────────────────────────────────────────────────┐
 # │                                              节点相关 设置                                                │
@@ -304,10 +302,11 @@ $_MT['enable_online_user']       = true;   // 是否显示节点的在线人数
 $_MT['enable_node_load']         = true;   // 是否显示节点的负载
 $_MT['node_flag_mode']           = 'name';   // name: 从节点名字正则匹配地区(正则方法在.config.php国旗选项) info: 为从节点状态取值，在节点列表里编辑节点，填写节点状态为 us 则显示美国国旗。us这个是国家ISO 3166码，不懂就谷歌。
 $_MT['node_class_name']          = [   //  节点的等级对应的名字
-    0 => '公益节点',   // 格式为 节点等级 => 节点等级名字
-    1 => '青铜节点',
-    2 => '白银节点',
-    3 => '钻石节点',
+    0 => '免费体验节点',
+    1 => '入门版节点',   // 格式为 节点等级 => 节点等级名字
+    2 => '基础版节点',
+    3 => '标准版节点',
+    4 => '旗舰版节点'
 ];
 
 # ┌──────────────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -334,7 +333,7 @@ $_MT['client_windows'] = [
         'name'  => 'Bob加速器',      // 客户端名称
         'img'   => 'https://cdn.jsdelivr.net/gh/BobCoderS9/metron-assets@3.0.2/metron/media/client-logos/clashr-ico.png',        // 图标, 使用png透明文件
         'url'   => '/user/tutorial?os=Windows&client=Clash',      // 安装教程的url地址
-        'down'  => 'https://www.google.com',              // 教程页里的客户端下载地址
+        'down'  => 'https://github.com/Fndroid/clash_for_windows_pkg/releases',              // 教程页里的客户端下载地址
         'vs'    => 'v3.2.4',     // 版本号
     ),
 ];
@@ -347,7 +346,7 @@ $_MT['client_android'] = [
         'name'  => 'Bob加速器',
         'img'   => 'https://cdn.jsdelivr.net/gh/BobCoderS9/metron-assets@3.0.2/metron/media/client-logos/clashr-ico.png',
         'url'   => '/user/tutorial?os=Android&client=Clash',
-        'down'  => 'https://www.google.com',
+        'down'  => 'https://github.com/Fndroid/clash_for_windows_pkg/releases',
         'vs'    => 'v2.0.0',
     ),
 ];
@@ -361,7 +360,7 @@ $_MT['client_macos'] = [
         'name'  => 'Bob加速器',
         'img'   => 'https://cdn.jsdelivr.net/gh/BobCoderS9/metron-assets@3.0.2/metron/media/client-logos/clashr-ico.png',
         'url'   => '/user/tutorial?os=MacOS&client=Clash',
-        'down'  => 'https://www.google.com',
+        'down'  => 'https://github.com/yichengchen/clashX/releases',
         'vs'    => 'v3.2.4',
     ),
 ];

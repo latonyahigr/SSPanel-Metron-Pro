@@ -79,8 +79,36 @@
                                                             <p class="form-text text-muted pt-2">登录账号时要求验证动态码, 以确认您的身份并保护您的帐户免遭破坏</p>
                                                         </div>
                                                     </div>
-
                                                     <div class="form-group row">
+                                                        <label class="col-3 col-xl-3 col-lg-3 col-form-label text-right">当前绑定</label>
+                                                        <div class="col-9 col-md-6 col-lg-9 col-xl-6">
+                                                            <p class="pt-3">{if $user->telegram_id == 0}未绑定账号{else}<a href="https://t.me/{$user->im_value}" target="blank"> @{$user->im_value}</a>{/if}</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-3 col-xl-3 col-lg-3 col-form-label text-right"> </label>
+                                                        <div class="col-9 col-md-6 col-lg-9 col-xl-6">
+                                                            {if $user->telegram_id == 0}
+                                                                <button type="button" class="btn btn-primary font-weight-bold btn-sm" data-toggle="modal" data-target="#bind-telegram-modal">开始绑定</button>
+                                                                <p class="form-text text-muted pt-2">Telegram 需要通过代理才可访问</p>
+                                                            {else}
+                                                                <button type="button" class="btn btn-danger font-weight-bold btn-sm" onclick="setting.telegram('unbind');">解除绑定</button>
+                                                                <p class="form-text text-muted pt-2">解除绑定后, 该 Telegram 账号将被移除对应群组并封禁</p>
+                                                            {/if}
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-3 col-xl-3 col-lg-3 col-form-label text-right">群组链接</label>
+                                                        <div class="col-9 col-md-6 col-lg-9 col-xl-6">
+                                                            {if $user->telegram_id == 0}
+                                                                <button type="button" class="btn btn-primary font-weight-bold btn-sm disabled" disabled="disabled">请先绑定账号</button>
+                                                            {else}
+                                                                <a href="{$config['telegram_group_link']}" target="_blank" class="btn btn-primary font-weight-bold btn-sm">加入群组</a>
+                                                                <p class="form-text text-muted pt-2">如果无法加入群组请与 <a href="https://t.me/{$telegram_bot}" target="_blank">@{$telegram_bot}</a> 申请群组解封</p>
+                                                            {/if}
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row" style="display:none">
                                                         <label class="col-3 col-xl-3 col-lg-3 col-form-label text-right"> </label>
                                                         <div class="col-9 col-md-6 col-lg-9 col-xl-6">
                                                             <button type="button" class="btn btn-danger font-weight-bold btn-sm" data-toggle="modal" data-target="#delete-account-modal">删除账号 !</button>
@@ -103,6 +131,27 @@
         </div>
         {include file='include/global/scripts.tpl'}
 
+        <div class="modal fade" id="bind-telegram-modal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title {$style[$theme_style]['modal']['text_title']}"><strong>绑定 Telegram 账号</strong></h5>
+                    </div>
+                    <div class="modal-body">
+                        <div class="text-center">
+                            <a href="https://t.me/{$telegram_bot}?start={$bind_token}" target="_blank" class="btn btn-primary font-weight-bold btn-sm"><i class="fab fa-telegram-plane"></i>一键绑定 Telegram</a>
+                        </div>
+                        <p class="font-size-h5 pt-5">一键绑定过程中如遇到问题, 可尝试手动绑定：</p>
+                        <span class="kt-font-bolder">1. 在 Telegram 添加机器人账号 <a href="https://t.me/{$telegram_bot}" target="_blank">@{$telegram_bot}</a></span><br>
+                        <span class="kt-font-bolder pt-2">2. 发送命令 <code class="cursor_onclick copy-modal" data-clipboard-text="/start {$bind_token}">/start {$bind_token}</code> (点击复制) 给机器人</span>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" onclick="window.location.reload();">我已绑定</button>
+                        <button type="button" class="btn {$style[$theme_style]['modal']['btn_close']} font-weight-bold" data-dismiss="modal">关闭</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 <!-- 二步验证 modal -->
 <div class="modal fade" id="step2-modal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">

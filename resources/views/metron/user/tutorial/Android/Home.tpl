@@ -72,7 +72,7 @@
 
                                                 <div class="row pl-5 pr-5">
                                                     <div class="row">
-                                                        <a href="https://github.com/Kr328/ClashForAndroid" class="btn btn-pill btn-v2ray  mr-4" target="_blank">&nbsp;&nbsp;<i class="metron-v2rayng text-white"></i>下载地址</a>
+                                                        <a href="https://github.com/Kr328/ClashForAndroid/releases/download/v2.5.12/cfa-2.5.12-foss-x86_64-release.apk" class="btn btn-pill btn-v2ray  mr-4" target="_blank">&nbsp;&nbsp;<i class="metron-v2rayng text-white"></i>下载地址</a>
                                                         <a href="/user/tutorial?os=Android&client=Clash" class="btn btn-pill btn-alipay " >&nbsp;&nbsp;<i class="metron-quantumultx text-white"></i>使用教程&nbsp;&nbsp;</a>
                                                     </div>
                                                 </div>

@@ -31,6 +31,9 @@
                         <li class="menu-header">我的</li>
                         <li class="menu-item menu-item-submenu menu-item-rel" data-menu-toggle="click"
                             aria-haspopup="true">
+{*                            <a href="/user/setting/safe" class="menu-link">*}
+{*                                <span class="menu-text"><i class="fas fa-user"></i><strong>我的账号</strong></span>*}
+{*                            </a>*}
                             <a href="javascript:;" class="menu-link menu-toggle">
                                 <span class="menu-text"><i class="fas fa-user"></i><strong>我的账号</strong></span>
                                 <span class="menu-desc"></span>

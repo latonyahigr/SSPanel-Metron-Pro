@@ -1562,7 +1562,8 @@ class UserController extends BaseController
                 }
                 return $this->view()->assign('email_name', $emailExplode[0])->assign('email_suffix', $email_suffix)->assign('email_whitelist', $email_whitelist)->display('user/settings/profile.tpl');
             case 'safe':
-                return $this->view()->display('user/settings/safe.tpl');
+                $bind_token = TelegramSessionManager::add_bind_session($user);
+                return $this->view()->assign('bind_token', $bind_token)->assign('telegram_bot', $_ENV['telegram_bot'])->display('user/settings/safe.tpl');
             case 'detect':
                 $type = $request->getQueryParams()['type'];;
                 return $this->view()->assign('type', $type)->display('user/settings/detect.tpl');

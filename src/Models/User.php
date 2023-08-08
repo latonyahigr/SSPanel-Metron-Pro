@@ -11,7 +11,7 @@ use App\Utils\{
     Telegram,
     URL
 };
-use App\Services\{Config, Mail, MetronSetting};
+use App\Services\{Auth, Config, Mail, MetronSetting};
 use Ramsey\Uuid\Uuid;
 use Exception;
 
@@ -354,7 +354,7 @@ class User extends Model
         $total = Ip::where('datetime', '>=', time() - 90)->where('userid', $uid)->orderBy('userid', 'desc')->get();
         $unique_ip_list = array();
         foreach ($total as $single_record) {
-            $single_record->ip = Tools::getRealIp($single_record->ip)   ;
+            $single_record->ip = Tools::getRealIp($single_record->ip);
             $is_node = Node::where('node_ip', $single_record->ip)->first();
             if ($is_node) {
                 continue;
@@ -1022,5 +1022,28 @@ class User extends Model
         return (!Tools::is_protocol_relay($this)
             ? []
             : Relay::where('user_id', $this->id)->orwhere('user_id', 0)->orderBy('id', 'asc')->get());
+    }
+
+    //安卓登录信息
+    public function getUserInfo(){
+        global $_MT;
+        $user = $this;
+        if ($user->class_expire!="1989-06-04 00:05:00" && $user->class >= 1){
+            $class_left_days = floor((strtotime($this->user->class_expire)-time())/86400)+1;
+        }else if($user->class <= 0){
+            $class_left_days = '-1';
+        }
+        $userInfo = [
+            'uid' => $user['id'],
+            'name' => $user['name'],
+            'class' => $user['class'],
+            'className' => $_MT['user_level'][$user['class']],
+            'email' => $user['email'],
+            'class_left_days' => $class_left_days,
+            'residualFlow' => $user->unusedTrafficGB(),
+            'usedTrafficGB' => $user->usedTrafficGB(),
+            'money' => $user['money']
+        ];
+       return $userInfo;
     }
 }

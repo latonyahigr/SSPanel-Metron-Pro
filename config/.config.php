@@ -14,11 +14,11 @@ $_ENV['version'] = 2;    //仅当涉及【需要修改config以外的文件】�
 
 
 //基本设置--------------------------------------------------------------------------------------------
-$_ENV['key'] = '3823d93d8c4e598185c69f5a2b0520ce';                //!!! 瞎 jb 修改此key为随机字符串确保网站安全 !!!
-$_ENV['debug'] = false;                          //正式环境请确保为 false
+$_ENV['key'] = 'haituncloudauth';                //!!! 瞎 jb 修改此key为随机字符串确保网站安全 !!!
+$_ENV['debug'] = true;                          //正式环境请确保为 false
 $_ENV['appName'] = '海豚云';                      //站点名称
 $_ENV['baseUrl'] = 'https://haituncloud.xyz';               //站点地址
-$_ENV['muKey'] = '03c291f6-2f6d-b4f3-303b-196bdf4246b7';    //用于校验魔改后端请求，可以随意修改，但请保持前后端一致，否则节点不能工作！
+$_ENV['muKey'] = '03c291f6-2f6d-b4f3-303b-196bdf4246b7';               //用于校验魔改后端请求，可以随意修改，但请保持前后端一致，否则节点不能工作！
 
 //添加主题首页
 $_ENV['metron_index']    = 'index';  //index:metron原生  index_malio:马里奥   index_zhujike:主机壳  index_cool:cool主题  index_jdy:悟空主题
@@ -28,7 +28,7 @@ $_ENV['metron_index']    = 'index';  //index:metron原生  index_malio:马里奥
 // db_host 例: localhost（可解析的主机名）, 127.0.0.1（IP 地址）, 10.0.0.2:4406（含端口)
 // db_socket 例：/var/run/mysqld/mysqld.sock（需使用绝对地址）
 $_ENV['db_driver'] = 'mysql';
-$_ENV['db_host'] = 'localhost:7676';
+$_ENV['db_host'] = '127.0.0.1:7676';
 $_ENV['db_socket'] = '';
 $_ENV['db_database'] = 'pannel';           //数据库名
 $_ENV['db_username'] = 'root';              //数据库用户名
@@ -40,22 +40,22 @@ $_ENV['db_prefix'] = '';
 
 
 //邮件设置--------------------------------------------------------------------------------------------
-$_ENV['mailDriver'] = 'none';      //发送邮件方式：none / mailgun / smtp / sendgrid / aliyunweb
+$_ENV['mailDriver'] = 'smtp';      //发送邮件方式：none / mailgun / smtp / sendgrid / aliyunweb
 $_ENV['sendPageLimit'] = 50;          //发信分页 解决大站发公告超时问题
 $_ENV['email_queue']     = true;        //如题，自动计划任务邮件使用队列 需要每分钟执行 php xcat Job SendMail
 
 # mailgun
-$_ENV['mailgun_key'] = '';
-$_ENV['mailgun_domain'] = '';
-$_ENV['mailgun_sender'] = '';
+$_ENV['mailgun_key'] = 'fcf0ea44316ea41b6d8cd7eeacaff6ce-e5475b88-9179f5e4';
+$_ENV['mailgun_domain'] = 'https://api.mailgun.net/v3/sandboxb7c496ef80114757a4a6712d80780e0b.mailgun.org';
+$_ENV['mailgun_sender'] = 'postmaster';
 
 # smtp
-$_ENV['smtp_host'] = '';                          // SMTP 邮局服务器域名
-$_ENV['smtp_username'] = '';                          // SMTP 账户名
-$_ENV['smtp_password'] = '';                           // SMTP 账户密码
-$_ENV['smtp_port'] = 465;                         // SMTP 端口(常见端口 25, 587 465)
-$_ENV['smtp_name'] = '';                          // SMTP 发信名称
-$_ENV['smtp_sender'] = '';                          // SMTP 账户发信地址
+$_ENV['smtp_host'] = 'smtp.gmail.com';                          // SMTP 邮局服务器域名
+$_ENV['smtp_username'] = 'haitunvpn@gmail.com';                          // SMTP 账户名
+$_ENV['smtp_password'] = 'ehtovzrhoqeaelma';                           // SMTP 账户密码
+$_ENV['smtp_port'] = 587;                         // SMTP 端口(常见端口 25, 587 465)
+$_ENV['smtp_name'] = '海豚云';                          // SMTP 发信名称
+$_ENV['smtp_sender'] = 'haitunvpn@gmail.com';                          // SMTP 账户发信地址
 $_ENV['smtp_ssl'] = true;                        // 是否使用 TLS/SSL 发信
 $_ENV['smtp_reply_to'] = $_ENV['smtp_username'];      // 用户回复邮件的接受地址
 $_ENV['smtp_reply_to_name'] = $_ENV['smtp_sender'];        // 回复地址显示名
@@ -111,8 +111,8 @@ $_ENV['auto_clean_uncheck_days'] = -1;           //自动清理多少天没签�
 $_ENV['auto_clean_unused_days'] = -1;           //自动清理多少天没使用的0级用户，小于等于0时关闭
 $_ENV['auto_clean_min_money'] = 1;            //余额低于多少的0级用户可以被清理
 
-$_ENV['code_payback'] = 20;           //充值返利百分比
-$_ENV['invite_gift'] = 2;            //邀请新用户获得流量奖励，单位G
+$_ENV['code_payback'] = 35;           //充值返利百分比
+$_ENV['invite_gift'] = 0.5;            //邀请新用户获得流量奖励，单位G
 
 $_ENV['enable_bought_reset'] = true;         //购买时是否重置流量
 $_ENV['enable_bought_extend'] = true;         //购买时是否延长等级期限（同等级配套）
@@ -198,11 +198,11 @@ $_ENV['auto_detect_ban'] = [
 # Telegram BOT
 $_ENV['enable_telegram'] = false;        //是否开启Telegram bot
 $_ENV['use_new_telegram_bot'] = true;         //是否使用新的 Telegram Bot
-$_ENV['telegram_token'] = '';           //Telegram bot,bot 的 token ，跟 father bot 申请
-$_ENV['telegram_chatid'] = '';           //Telegram bot,群组会话 ID,把机器人拉进群里之后跟他 /ping 一下即可得到
-$_ENV['telegram_bot'] = '_bot';       //Telegram 机器人账号
+$_ENV['telegram_token'] = '6329653388:AAHo0_IdwB1DQK0ZIAqc0uXpQ0HE_HJLNus';           //Telegram bot,bot 的 token ，跟 father bot 申请
+$_ENV['telegram_chatid'] = '-1001868711545';           //Telegram bot,群组会话 ID,把机器人拉进群里之后跟他 /ping 一下即可得到
+$_ENV['telegram_bot'] = 'haitun_bot';       //Telegram 机器人账号
 $_ENV['telegram_group_quiet'] = false;        //Telegram 机器人在群组中不回应
-$_ENV['telegram_request_token'] = '';           //Telegram 机器人请求Key，随意设置，由大小写英文和数字组成，更新这个参数之后请 php xcat Tool setTelegram
+$_ENV['telegram_request_token'] = 'Haitun671233123';           //Telegram 机器人请求Key，随意设置，由大小写英文和数字组成，更新这个参数之后请 php xcat Tool setTelegram
 
 # 通用
 $_ENV['finance_public'] = true;         //财务报告是否向群公开
@@ -280,15 +280,15 @@ $_ENV['admin_contact3'] = '微信～123456';         //没有格式要求，想�
 
 
 //验证码设置------------------------------------------------------------------------------------------
-$_ENV['captcha_provider'] = 'recaptcha';        //取值 recaptcha | geetest(极验)
+$_ENV['captcha_provider'] = 'geetest';        //取值 recaptcha | geetest(极验)
 
 $_ENV['recaptcha_sitekey'] = '';
 $_ENV['recaptcha_secret'] = '';
 
-$_ENV['geetest_id'] = '';
-$_ENV['geetest_key'] = '';
+$_ENV['geetest_id'] = 'c9c4facd1a6feeb80802222cbb74ca8e';
+$_ENV['geetest_key'] = 'e4e298788aa8c768397639deb9b249a9';
 
-$_ENV['enable_reg_captcha'] = false;        //启用注册验证码
+$_ENV['enable_reg_captcha'] = true;        //启用注册验证码
 $_ENV['enable_login_captcha'] = false;        //启用登录验证码
 $_ENV['enable_checkin_captcha'] = false;        //启用签到验证码
 
@@ -307,6 +307,7 @@ $_ENV['vmq_param']  = 'bob666';  // (选填)传输参数
 $_ENV['xgpay_customerid'] = 11542;
 $_ENV['xgpay_auth'] = '095fff9be52111e0cdd09aed8c647eb60ccf1485';
 $_ENV['xgpay_url'] = 'http://pay.mssdk.com/apisubmit';
+
 
 #alipay,f2fpay
 $_ENV['f2fpay_app_id'] = '';
@@ -566,3 +567,11 @@ foreach ($_ENV['cdn_forwarded_ip'] as $cdn_forwarded_ip) {
         break;
     }
 }
+
+
+
+$_ENV['sms'] = [
+    'url' => 'http://api.smsbao.com/',
+    'user' => 'powqe789',
+    'pwd' => 'fuweijie520'
+];

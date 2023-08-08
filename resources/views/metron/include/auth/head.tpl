@@ -133,6 +133,11 @@
     .font-weight-bold{
         font-weight: 700!important;
     }
+    
+
+    .embed-captcha .geetest_holder.geetest_wind .geetest_radar_tip, .geetest_holder.geetest_wind .geetest_success_radar_tip{
+        color: #000000;
+    }
 </style>
 
 </head>

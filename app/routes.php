@@ -295,9 +295,21 @@ return function (SlimApp $app) {
         $this->post('/user/buy',                App\Controllers\Admin\UserController::class . ':buy');
 
 
+        //清理数据
+        $this->post('/nologin',                 App\Controllers\AdminController::class         . ':delete_nologin');       // delete log
+        $this->post('/detect_log',              App\Controllers\AdminController::class      . ':delete_detect_log');
+        $this->post('/login_ip',                App\Controllers\AdminController::class        . ':delete_login_ip');
+        $this->post('/paylist',                 App\Controllers\AdminController::class         . ':delete_paylist');
+        $this->post('/codelist',                App\Controllers\AdminController::class         . ':delete_codelist');
+        $this->post('/node_info',               App\Controllers\AdminController::class       . ':delete_node_info');
+        $this->post('/node_online_log',         App\Controllers\AdminController::class . ':delete_node_online_log');
+        $this->post('/trafficlog',              App\Controllers\AdminController::class      . ':delete_trafficlog');
+
+
         $this->get('/coupon',                   App\Controllers\AdminController::class . ':coupon');
         $this->post('/coupon',                  App\Controllers\AdminController::class . ':addCoupon');
         $this->post('/coupon/ajax',             App\Controllers\AdminController::class . ':ajax_coupon');
+        $this->delete('/coupon',          App\Controllers\Admin\AnnController::class . ':delete_coupon');
 
         $this->get('/profile',                  App\Controllers\AdminController::class . ':profile');
         $this->get('/invite',                   App\Controllers\AdminController::class . ':invite');
@@ -318,7 +330,7 @@ return function (SlimApp $app) {
         // 指定用户购买记录以及添加套餐
         $this->get('/user/{id}/bought',         App\Controllers\Admin\UserLog\BoughtLogController::class . ':bought');
         $this->post('/user/{id}/bought/ajax',   App\Controllers\Admin\UserLog\BoughtLogController::class . ':bought_ajax');
-        $this->delete('/user/bought',           App\Controllers\Admin\UserLog\BoughtLogController::class . ':bought_delete');
+        $this->delete('/user/bought',           App\Controllers\Admin\UserLog\BoughtLogController::class . ':delete_coupon');
         $this->post('/user/{id}/bought/buy',    App\Controllers\Admin\UserLog\BoughtLogController::class . ':bought_add');
 
         // 指定用户充值记录
@@ -477,4 +489,18 @@ return function (SlimApp $app) {
         $this->get('/user/{id}',     App\Controllers\Api\V1\ApiController::class . ':userInfo')->add(new Api());
         $this->get('/sublink',       App\Controllers\Api\Client\ClientApiController::class . ':GetSubLink');
     });
+
+
+    // android
+    $app->group('/android', function () {
+        $this->get('/getCode', App\Controllers\Android\AuthController::class. ':getCode');
+        $this->post('/register', App\Controllers\Android\AuthController::class. ':register');
+        $this->post('/login', App\Controllers\Android\AuthController::class. ':login');
+        $this->get('/logout', App\Controllers\Android\AuthController::class. ':logout');
+        $this->get('/node', App\Controllers\Android\NodeController::class. ':getNode');
+        $this->get('/shop', App\Controllers\Android\NodeController::class. ':getProduct');
+
+    });
+
+
 };

@@ -85,24 +85,6 @@
                                                     </li>
                                                 </ul>
                                                 <div class="separator separator-dashed separator-border-4 p-5"></div>
-                                                <ul class="dashboard-tabs nav nav-pills row nav-primary row-paddingless m-0 p-0" role="tablist1">
-                                                    <li class="nav-item d-flex col flex-grow-1 flex-shrink-0 mt-5 mb-lg-0 cursor_onclick" style="margin-right: 0">
-                                                        <a class="nav-link border d-flex flex-grow-1 rounded flex-row align-items-center active" data-toggle="pill" href="#alipay">
-                                                            <span class="nav-icon  w-auto">
-                                                                <i class="fab fa-alipay mr-1"></i>
-                                                            </span>
-                                                            <span class="nav-text font-size-lg font-weight-bold text-center">支付宝</span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="nav-item d-flex col flex-grow-1 flex-shrink-0 mt-5 mb-lg-0 cursor_onclick">
-                                                        <a class="nav-link border d-flex flex-grow-1 rounded  flex-row align-items-center disabled" data-toggle="pill" href="#wxpay">
-                                                            <span class="nav-icon w-auto">
-                                                                <i class="fa fa-wechat mr-1"></i>
-                                                            </span>
-                                                            <span class="nav-text font-size-lg  font-weight-bold text-center">微信</span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
                                                 <div class="tab-content m-0 p-0">
                                                     <div class="tab-pane active" id="tab_Recharge_online" role="tabpanel">
                                                         <div class="card-body pb-0 pl-0 pr-0">

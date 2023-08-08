@@ -58,14 +58,13 @@
                                                         </svg>
                                                     </span>
                                                     <div class="d-flex flex-column ml-3 mr-5">
-                                                        <div class="font-size-h4 {$style[$theme_style]['index']['text']} mb-2">
-                                                            <div class="font-size-h4 {$style[$theme_style]['index']['text']} mb-2">
-                                                                <strong>{if $user->class_expire!="1989-06-04 00:05:00" && $user->class >= 1}
-                                                                        <span class="counter">{$class_left_days}</span>
-                                                                        天{elseif $user->class <= 0}
-                                                                        <span class="counter">已过期</span>
-                                                                    {else}未知{/if}</strong></div>
-                                                            <p class="text-dark-50">会员时长</p>
+                                                          <div class="font-size-h4 {$style[$theme_style]['index']['text']} mb-2">
+                                                            <strong>{if $user->class_expire!="1989-06-04 00:05:00" && $user->class >= 1}
+                                                                    <span class="counter">{$class_left_days}</span>
+                                                                    天{elseif $user->class <= 0}
+                                                                    <span class="counter">已过期</span>
+                                                                {else}未知{/if}</strong></div>
+                                                        <p class="text-dark-50">会员时长</p>
                                                     </div>
                                                 </div>
                                             </div>

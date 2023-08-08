@@ -260,7 +260,6 @@ class HelpController extends AdminController
         $pageshow = $request->getParam('pageshow');
         $ico      = $request->getParam('ico');
         $sort     = $request->getParam('sort');
-        $desc = $request->getParam('desc');
 
         if (!$name) {
             $rs['ret'] = 0;
@@ -279,7 +278,7 @@ class HelpController extends AdminController
         $helpc->pageshow = $pageshow;
         $helpc->li       = $ico;
         $helpc->sort     = $sort;
-        $helpc->descs = $desc;
+
         if (!$helpc->save()) {
             $rs['ret'] = 0;
             $rs['msg'] = '添加失败';
@@ -315,7 +314,6 @@ class HelpController extends AdminController
     public function class_update($request, $response, $args)
     {
         $name     = $request->getParam('name');
-        $desc = $request->getParam('desc');
         $classji  = $request->getParam('classji');
         $class1ji = $request->getParam('class1ji');
         $pageshow = $request->getParam('pageshow');
@@ -340,7 +338,6 @@ class HelpController extends AdminController
         $helpc->pageshow = $pageshow;
         $helpc->li       = $ico;
         $helpc->sort     = $sort;
-        $helpc->descs = $desc;
 
         if (!$helpc->save()) {
             $rs['ret'] = 0;

@@ -8,15 +8,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
 <link href="{$metron['assets_url']}/css/fonts.css?family=Poppins:300,400,500,600,700" rel="stylesheet" />
-{if $theme_style === 'dark'}
-    <link href="{$metron['assets_url']}/css/style/dark/plugins.dark.css" rel="stylesheet" type="text/css" />
-    <link href="{$metron['assets_url']}/css/style/dark/giatun.dark.css" rel="stylesheet" type="text/css" />
-    <link href="{$metron['assets_url']}/css/style/dark/style.dark.css" rel="stylesheet" type="text/css" />
-{else}
-    <link href="{$metron['assets_url']}/css/style/white/plugins.white.css" rel="stylesheet" type="text/css" />
-    <link href="{$metron['assets_url']}/css/style/white/giatun.white.css" rel="stylesheet" type="text/css" />
-    <link href="{$metron['assets_url']}/css/style/white/style.white.css" rel="stylesheet" type="text/css" />
-{/if}
+<link href="{$metron['assets_url']}/css/style/white/plugins.white.css" rel="stylesheet" type="text/css" />
+<link href="/theme/metron/css/style/white/giatun.white.css" rel="stylesheet" type="text/css" />
+<link href="/theme/metron/css/style/white/style.white.css" rel="stylesheet" type="text/css" />
 <style>
 .header-logo-mobile{
     display: inline-block;

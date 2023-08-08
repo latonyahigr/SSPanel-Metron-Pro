@@ -3,14 +3,23 @@
 namespace App\Controllers;
 
 use Illuminate\Database\Capsule\Manager;
-use App\Models\{Node, Paylist, Ticket, TrafficLog, User, Coupon};
+use App\Models\{Bought,
+    Code,
+    DetectLog,
+    LoginIp,
+    Node,
+    NodeInfoLog,
+    NodeOnlineLog,
+    Paylist,
+    Ticket,
+    TrafficLog,
+    User,
+    Coupon};
 use App\Utils\{
     Tools,
     DatatablesHelper
 };
-use App\Services\{
-    Analytics
-};
+use App\Services\{Analytics, Anylogs};
 use Ozdemir\Datatables\Datatables;
 
 /**
@@ -18,10 +27,10 @@ use Ozdemir\Datatables\Datatables;
  */
 class AdminController extends UserController
 {
-    public function index($request, $response, $args)
-    {
+    public function index($request, $response, $args){
         $sts = new Analytics();
-	// admin增加收入和用户统计
+        $sys = new Anylogs();
+        // admin增加收入和用户统计
         $days = [];
 
         for ($i = 1; $i <= 5; $i++) {
@@ -30,7 +39,7 @@ class AdminController extends UserController
             $days[] = date("Y-m-d", $day);
         }
 
-        return $this->view()->assign('sts', $sts)->assign('days', $days)->display('admin/index.tpl');
+        return $this->view()->assign('sts', $sts)->assign('days', $days)->assign('sys', $sys)->display('admin/index.tpl');
     }
 
     public function node($request, $response, $args)
@@ -125,6 +134,7 @@ class AdminController extends UserController
     public function coupon($request, $response, $args)
     {
         $table_config['total_column'] = array(
+            'op'  => '操作',
             'id' => 'ID', 'code' => '优惠码',
             'expire' => '过期时间', 'shop' => '限定商品ID',
             'credit' => '额度', 'onetime' => '次数'
@@ -237,12 +247,32 @@ class AdminController extends UserController
         $datatables = new Datatables(new DatatablesHelper());
         $datatables->query('Select id,code,expire,shop,credit,onetime from coupon');
 
+        $datatables->edit('op', static function ($data) {
+            return '<a class="btn btn-brand-accent" id="delete" value="' . $data['id'] . '" href="javascript:void(0);" onClick="delete_modal_show(\'' . $data['id'] . '\')">删除</a>';
+        });
+
         $datatables->edit('expire', static function ($data) {
             return date('Y-m-d H:i:s', $data['expire']);
         });
 
         $body = $response->getBody();
         $body->write($datatables->generate());
+    }
+
+    public function delete_coupon($request, $response, $args){
+        $id = $request->getParam('id');
+        $coupon = Coupon::find($id);
+        if (!$coupon->delete()) {
+            $rs['ret'] = 0;
+            $rs['msg'] = '删除失败';
+            return $response->getBody()->write(json_encode($rs));
+        }
+        $rs['ret'] = 1;
+        $rs['msg'] = '删除成功';
+
+        return $response->write(
+            json_encode($rs)
+        );
     }
     // admin增加收入统计
     public function getIncome($request, $response, $args)
@@ -464,5 +494,77 @@ class AdminController extends UserController
             ->where('status', 1)->where('rootid', 0)->count();
 
         return $response->getBody()->write(json_encode(['data' => $data, 'success' => true]));
+    }
+
+
+
+    public function deleteNologin()
+    {
+
+        $users = User::where('ssrlink', '=', null)->get();
+        foreach ($users as $user){
+            $user->kill_user($user->id, $user->email);
+            sleep(1);
+        }
+    }
+
+    public function delete_detect_log($request, $response, $args)
+    {
+
+        DetectLog::where('datetime', '<', time() - 3600 * 1)->delete();
+        sleep(1);
+        $res['ret'] = 1;
+        $res['msg'] = "删除审计记录成功!";
+        return $response->getBody()->write(json_encode($res));
+    }
+    public function delete_login_ip($request, $response, $args)
+    {
+        LoginIp::where('datetime', '<', time() - 3600 * 1)->delete();
+        sleep(1);
+        $res['ret'] = 1;
+        $res['msg'] = "删除登陆记录成功!";
+        return $response->getBody()->write(json_encode($res));
+    }
+    public function delete_paylist($request, $response, $args)
+    {
+        Paylist::where('status', 0)->delete();
+        sleep(1);
+        $res['ret'] = 1;
+        $res['msg'] = "删除未支付订单记录成功!";
+        return $response->getBody()->write(json_encode($res));
+    }
+
+    public function delete_codelist($request, $response, $args)
+    {
+        Code::where('isused', 1)->delete();
+        sleep(1);
+        $res['ret'] = 1;
+        $res['msg'] = "删除流水记录成功!";
+        return $response->getBody()->write(json_encode($res));
+    }
+
+    public function delete_node_info($request, $response, $args)
+    {
+        NodeInfoLog::where('log_time', '<', time() - 3600 * 1)->delete();
+        sleep(1);
+        $res['ret'] = 1;
+        $res['msg'] = "删除节点信息记录成功!";
+        return $response->getBody()->write(json_encode($res));
+    }
+    public function delete_node_online_log($request, $response, $args)
+    {
+        NodeOnlineLog::where('log_time', '<', time() - 3600 * 1)->delete();
+        sleep(1);
+        $res['ret'] = 1;
+        $res['msg'] = "删除节点在线记录成功!";
+        return $response->getBody()->write(json_encode($res));
+    }
+    public function delete_trafficlog($request, $response, $args)
+    {
+        TrafficLog::where('log_time', '<', time() - 3600 * 1)->delete();
+        sleep(1);
+        $res['ret'] = 1;
+        $res['msg'] = "删除实时流量记录成功!";
+        return $response->getBody()->write(json_encode($res));
     }
 }

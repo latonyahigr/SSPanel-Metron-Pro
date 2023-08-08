@@ -636,6 +636,15 @@ CREATE TABLE `email_verify` ( `id` BIGINT NOT NULL AUTO_INCREMENT , `email` TEXT
 
 
 CREATE TABLE `detect_list` ( `id` BIGINT NOT NULL AUTO_INCREMENT , `name` LONGTEXT NOT NULL , `text` LONGTEXT NOT NULL , `regex` LONGTEXT NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+INSERT INTO `detect_list` (`id`, `name`, `text`, `regex`, `type`) VALUES (1, '挖矿审计', '数据包明文匹配', '(.*\\.||)(sigmapool|hashcity|2miners|solo-etc|nanopool|minergate|comining|give-me-coins|hiveon|arsmine|baikalmine|solopool|litecoinpool|mining-dutch|clona|viabtc|beepool|maxhash|bwpool|coinminerz|miningcore|multipools|uupool|minexmr|pandaminer|f2pool|sparkpool|antpool|poolin|slushpool|marathondh|pool.btc)\\.(cn|com|org|net|club|net|fr|tw|hk|eu|info|me|io)', 1);
+INSERT INTO `detect_list` (`id`, `name`, `text`, `regex`, `type`) VALUES (2, '禁用BT 防止版权争议', '禁用BT 防止版权争议', 'BitTorrent protocol', 1);
+INSERT INTO `detect_list` (`id`, `name`, `text`, `regex`, `type`) VALUES (3, '禁止百度高精度定位 防止IP与客户端地理位置被记录', '禁止百度高精度定位 防止IP与客户端地理位置被记录', '(api|ps|sv|offnavi|newvector|ulog\\.imap|newloc)(\\.map|)\\.(baidu|n\\.shifen)\\.com', 1);
+INSERT INTO `detect_list` (`id`, `name`, `text`, `regex`, `type`) VALUES (4, '禁止360服务 屏蔽360', '禁止360服务 屏蔽360', '(.+\\.|^)(360|so)\\.(cn|com)', 1);
+INSERT INTO `detect_list` (`id`, `name`, `text`, `regex`, `type`) VALUES (5, '禁止邮件滥发 防止垃圾邮件滥用', '禁止邮件滥发 防止垃圾邮件滥用', '(.*\\.||)(dafahao|minghui|dongtaiwang|epochtimes|ntdtv|falundafa|wujieliulan|zhengjian)\\.(org|com|net)', 1);
+INSERT INTO `detect_list` (`id`, `name`, `text`, `regex`, `type`) VALUES (6, '屏蔽 BT（2）', '屏蔽 BT（2', '(torrent|\\.torrent|peer_id=|info_hash|get_peers|find_node|BitTorrent|announce_peer|announce\\.php\\?passkey=)', 1);
+INSERT INTO `detect_list` (`id`, `name`, `text`, `regex`, `type`) VALUES (7, '屏蔽Spam邮箱（数据包明文匹配）', '屏蔽Spam邮箱（数据包明文匹配）', '(^.*\\@)(guerrillamail|guerrillamailblock|sharklasers|grr|pokemail|spam4|bccto|chacuo|027168)\\.(info|biz|com|de|net|org|me|la)', 1);
+INSERT INTO `detect_list` (`id`, `name`, `text`, `regex`, `type`) VALUES (8, '屏蔽迅雷', '屏蔽迅雷', '(.?)(xunlei|sandai|Thunder|XLLiveUD)(.)', 1);
+INSERT INTO `detect_list` (`id`, `name`, `text`, `regex`, `type`) VALUES (9, '屏蔽轮子网站', '屏蔽轮子网站', '(.*\\.||)(dafahao|minghui|dongtaiwang|epochtimes|ntdtv|falundafa|wujieliulan|zhengjian)\\.(org|com|net)', 1);
 
 CREATE TABLE `detect_log` ( `id` BIGINT NOT NULL AUTO_INCREMENT , `user_id` BIGINT NOT NULL , `list_id` BIGINT NOT NULL , `datetime` BIGINT NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
 
